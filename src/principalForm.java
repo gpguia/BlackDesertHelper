@@ -10,6 +10,8 @@
  */
 import java.util.Timer;
 import java.util.TimerTask;
+import javax.swing.ImageIcon;
+
 public class principalForm extends javax.swing.JFrame {
 
     /**
@@ -33,8 +35,11 @@ public class principalForm extends javax.swing.JFrame {
         lSelect = new java.awt.Label();
         cbFirstFood = new javax.swing.JComboBox<>();
         tfFirstFoodClock = new javax.swing.JTextField();
-        lFirstFoodIcon = new java.awt.Label();
         bAteFirstFood = new java.awt.Button();
+        cbSecondFood = new javax.swing.JComboBox<>();
+        tfSecondFoodClock = new javax.swing.JTextField();
+        bAteSecondFood = new java.awt.Button();
+        jFirstFoodIcon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,8 +68,6 @@ public class principalForm extends javax.swing.JFrame {
             }
         });
 
-        lFirstFoodIcon.setText("label2");
-
         bAteFirstFood.setActionCommand("n");
         bAteFirstFood.setLabel("Ate the food");
         bAteFirstFood.addActionListener(new java.awt.event.ActionListener() {
@@ -72,6 +75,36 @@ public class principalForm extends javax.swing.JFrame {
                 bAteFirstFoodActionPerformed(evt);
             }
         });
+
+        cbSecondFood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Test[31]", "Aloe Cookie[30]", "Aloe Yogurt[30]", "Arehaza Special[90]", "Assorted Side Dishes[90]", "Balenos Special[90]", "Beehive Cookie[90]", "Boiled Bird Eggs[30]", "Borscht[60]", "Butter-Roasted Lobster[60]", "Calpheon Special[90]", "Cheese Gratin[90]", "Coconut Cocktails[60]", "Coconut Fried Fish[60]", "Coconut Pasta[60]", "Couscous[110]", "Dark Pudding[90]", "Date Palms Wine[90]", "Desert Dumpling[30]", "Exotic Herbal Wine[30]", "Fig Pie[60]", "Fish Fillet Salad[60]", "Fish Soup[60]", "Fried Bird[60]", "Fried Vegetables[30]", "Fruit and Vegetable Salad[60]", "Fruit Juice[30]", "Fruit Pie[90]", "Fruit Pudding[30]", "Fruit Wine[60]", "Grain Soup[30]", "Grilled Sausage[30]", "Grilled Scorpion[90]", "Ham Sandwich[90]", "Honey Wine[60]", "Hunter's Salad[30]", "Healthy Sute Tea[110]", "Jungle Hamburger[110]", "Khalk's Fermented Wine[60]", "Knight Combat Rations[120]", "Lean Meat Salad[90]", "Lizard Kebab[30]", "Margoria Seafood Extravaganza[90]", "Meat Croquette[90]", "Meat Pasta[60]", "Meat Pie[60]", "Meat Sandwich[90]", "Meat Soup[30]", "Meat Stew[30]", "Mediah Special[90]", "Milk Tea[90]", "Omelet[60]", "Pickled Fish[60]", "Pickled Vegetables[60]", "Pistachio Rice[90]", "Prawn Salad[60]", "Seafood Grilled with Butter[30]", "Seafood Mushroom Salad[30]", "Seafood Pasta[60]", "Serendia Special[90]", "Smoked Fish Steak[60]", "Soft Bread[30]", "Steak[60]", "Steamed Bird[60]", "Steamed Fish[30]", "Steamed Prawn[60]", "Steamed Seafood[60]", "Steamed Whale Meat[75]", "Stir-fried Gazelle Hind Leg[60]", "Stir-Fried Meat[60]", "Stir-Fried Oyster[60]", "Stir-Fried Seafood[30]", "Stir-fried Vegetables[30]", "Sute Tea[90]", "Tea With Fine Scent[60]", "Teff Bread[110]", "Teff Sandwich[110]", "Valencian Special[120]", "Whale Meat Salad[75]" }));
+        cbSecondFood.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbSecondFoodActionPerformed(evt);
+            }
+        });
+
+        tfSecondFoodClock.setEditable(false);
+        tfSecondFoodClock.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        tfSecondFoodClock.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfSecondFoodClock.setText("00:00:00");
+        tfSecondFoodClock.setEnabled(false);
+        tfSecondFoodClock.setName("firstFoodClock"); // NOI18N
+        tfSecondFoodClock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfSecondFoodClockActionPerformed(evt);
+            }
+        });
+
+        bAteSecondFood.setActionCommand("n");
+        bAteSecondFood.setLabel("Ate the food");
+        bAteSecondFood.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAteSecondFoodActionPerformed(evt);
+            }
+        });
+
+        jFirstFoodIcon.setMaximumSize(new java.awt.Dimension(42, 42));
+        jFirstFoodIcon.setMinimumSize(new java.awt.Dimension(42, 42));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,16 +118,24 @@ public class principalForm extends javax.swing.JFrame {
                         .addContainerGap(391, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addComponent(cbSecondFood, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfSecondFoodClock, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bAteSecondFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lFirstFoodIcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(1, 1, 1)
+                                .addComponent(jFirstFoodIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(cbFirstFood, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(tfFirstFoodClock, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(bAteFirstFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 118, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,24 +144,46 @@ public class principalForm extends javax.swing.JFrame {
                 .addComponent(lRemainder)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jFirstFoodIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cbFirstFood, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tfFirstFoodClock, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(bAteFirstFood, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(9, 9, 9)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbFirstFood)
+                            .addComponent(tfFirstFoodClock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(lFirstFoodIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addGap(9, 9, 9)
+                        .addComponent(bAteFirstFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(154, 154, 154)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cbSecondFood, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tfSecondFoodClock, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bAteSecondFood, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void cbFirstFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFirstFoodActionPerformed
-        // TODO add your handling code here:
+        //Set the path to the img and fix the name.
+        String foodName = cbFirstFood.getSelectedItem().toString();
+        String path = "resources/img";
+        path = path + "/" + foodName;
+        int ini, end;
+        ini = path.indexOf("[");
+        end = path.indexOf("]") + 1;
+        path = path.replace(path.substring(ini, end), "");
+        path = path.replace(" ", "");
+        path = path + ".png";
+        //Just Debug
+        //lRemainder.setText(path);
+        //lRemainder.setVisible(true);      
+        ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource(path));
+        //ImageIcon icon = new ImageIcon(path);
+        jFirstFoodIcon.setIcon(icon);
+        
     }//GEN-LAST:event_cbFirstFoodActionPerformed
 
     private void tfFirstFoodClockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfFirstFoodClockActionPerformed
@@ -128,8 +191,11 @@ public class principalForm extends javax.swing.JFrame {
     }//GEN-LAST:event_tfFirstFoodClockActionPerformed
 
     private void bAteFirstFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAteFirstFoodActionPerformed
+        //Time is the string to hold what will be replaced in the textbox
         String time;
+        //This label will be activate when the food get 30 min or less of duration
         String labelRemainder = "You should eat ";
+        //Get The food name.
         String firstFoodName = cbFirstFood.getSelectedItem().toString();
         labelRemainder = labelRemainder + firstFoodName;
         lRemainder.setText(labelRemainder);
@@ -147,8 +213,26 @@ public class principalForm extends javax.swing.JFrame {
             time = time + "0";
         time = time + Integer.toString(m) + ":" + "00";
         tfFirstFoodClock.setText(time);
+        updateTimer(time);
     }//GEN-LAST:event_bAteFirstFoodActionPerformed
 
+    private void cbSecondFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSecondFoodActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbSecondFoodActionPerformed
+
+    private void tfSecondFoodClockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSecondFoodClockActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfSecondFoodClockActionPerformed
+
+    private void bAteSecondFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAteSecondFoodActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bAteSecondFoodActionPerformed
+       public static void updateTimer(String time){
+           String newTime;
+           int t;
+           t = Integer.parseInt(time);
+           
+       }
     /**
      * @param args the command line arguments
      */
@@ -186,10 +270,13 @@ public class principalForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button bAteFirstFood;
+    private java.awt.Button bAteSecondFood;
     private javax.swing.JComboBox<String> cbFirstFood;
-    private java.awt.Label lFirstFoodIcon;
+    private javax.swing.JComboBox<String> cbSecondFood;
+    private javax.swing.JLabel jFirstFoodIcon;
     private javax.swing.JLabel lRemainder;
     private java.awt.Label lSelect;
     private javax.swing.JTextField tfFirstFoodClock;
+    private javax.swing.JTextField tfSecondFoodClock;
     // End of variables declaration//GEN-END:variables
 }
