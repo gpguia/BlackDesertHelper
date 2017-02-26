@@ -8,9 +8,11 @@
  *
  * @author guilhermeguia
  */
+import javax.swing.ImageIcon;
+import java.util.Calendar;
+import java.text.SimpleDateFormat;
 import java.util.Timer;
 import java.util.TimerTask;
-import javax.swing.ImageIcon;
 
 public class principalForm extends javax.swing.JFrame {
 
@@ -20,6 +22,9 @@ public class principalForm extends javax.swing.JFrame {
     public principalForm() {
         initComponents();
         lRemainder.setVisible(false);
+        ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource("resources/img/AloeCookie.png"));
+        jFirstFoodIcon.setIcon(icon);
+        jSecondFoodIcon.setIcon(icon);
     }
 
     /**
@@ -31,25 +36,36 @@ public class principalForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lRemainder = new javax.swing.JLabel();
+        jPanelFood = new javax.swing.JPanel();
         lSelect = new java.awt.Label();
+        lRemainder = new javax.swing.JLabel();
+        jFirstFoodIcon = new javax.swing.JLabel();
         cbFirstFood = new javax.swing.JComboBox<>();
         tfFirstFoodClock = new javax.swing.JTextField();
         bAteFirstFood = new java.awt.Button();
-        cbSecondFood = new javax.swing.JComboBox<>();
-        tfSecondFoodClock = new javax.swing.JTextField();
         bAteSecondFood = new java.awt.Button();
-        jFirstFoodIcon = new javax.swing.JLabel();
+        tfSecondFoodClock = new javax.swing.JTextField();
+        cbSecondFood = new javax.swing.JComboBox<>();
+        jSecondFoodIcon = new javax.swing.JLabel();
+        lSelect1 = new java.awt.Label();
+        lSelect2 = new java.awt.Label();
+        jPanelMenu = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lSelect.setText("1 - Select your food from the list.");
 
         lRemainder.setForeground(new java.awt.Color(255, 0, 0));
         lRemainder.setText("You should eat: ");
         lRemainder.setName("lRemainder"); // NOI18N
 
-        lSelect.setText("Select your food:");
+        jFirstFoodIcon.setMaximumSize(new java.awt.Dimension(42, 42));
+        jFirstFoodIcon.setMinimumSize(new java.awt.Dimension(42, 42));
 
-        cbFirstFood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Test[31]", "Aloe Cookie[30]", "Aloe Yogurt[30]", "Arehaza Special[90]", "Assorted Side Dishes[90]", "Balenos Special[90]", "Beehive Cookie[90]", "Boiled Bird Eggs[30]", "Borscht[60]", "Butter-Roasted Lobster[60]", "Calpheon Special[90]", "Cheese Gratin[90]", "Coconut Cocktails[60]", "Coconut Fried Fish[60]", "Coconut Pasta[60]", "Couscous[110]", "Dark Pudding[90]", "Date Palms Wine[90]", "Desert Dumpling[30]", "Exotic Herbal Wine[30]", "Fig Pie[60]", "Fish Fillet Salad[60]", "Fish Soup[60]", "Fried Bird[60]", "Fried Vegetables[30]", "Fruit and Vegetable Salad[60]", "Fruit Juice[30]", "Fruit Pie[90]", "Fruit Pudding[30]", "Fruit Wine[60]", "Grain Soup[30]", "Grilled Sausage[30]", "Grilled Scorpion[90]", "Ham Sandwich[90]", "Honey Wine[60]", "Hunter's Salad[30]", "Healthy Sute Tea[110]", "Jungle Hamburger[110]", "Khalk's Fermented Wine[60]", "Knight Combat Rations[120]", "Lean Meat Salad[90]", "Lizard Kebab[30]", "Margoria Seafood Extravaganza[90]", "Meat Croquette[90]", "Meat Pasta[60]", "Meat Pie[60]", "Meat Sandwich[90]", "Meat Soup[30]", "Meat Stew[30]", "Mediah Special[90]", "Milk Tea[90]", "Omelet[60]", "Pickled Fish[60]", "Pickled Vegetables[60]", "Pistachio Rice[90]", "Prawn Salad[60]", "Seafood Grilled with Butter[30]", "Seafood Mushroom Salad[30]", "Seafood Pasta[60]", "Serendia Special[90]", "Smoked Fish Steak[60]", "Soft Bread[30]", "Steak[60]", "Steamed Bird[60]", "Steamed Fish[30]", "Steamed Prawn[60]", "Steamed Seafood[60]", "Steamed Whale Meat[75]", "Stir-fried Gazelle Hind Leg[60]", "Stir-Fried Meat[60]", "Stir-Fried Oyster[60]", "Stir-Fried Seafood[30]", "Stir-fried Vegetables[30]", "Sute Tea[90]", "Tea With Fine Scent[60]", "Teff Bread[110]", "Teff Sandwich[110]", "Valencian Special[120]", "Whale Meat Salad[75]" }));
+        cbFirstFood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aloe Cookie[30]", "Aloe Yogurt[30]", "Arehaza Special[90]", "Assorted Side Dishes[90]", "Balenos Special[90]", "Beehive Cookie[90]", "Boiled Bird Eggs[30]", "Borscht[60]", "Butter-Roasted Lobster[60]", "Calpheon Special[90]", "Cheese Gratin[90]", "Coconut Cocktails[60]", "Coconut Fried Fish[60]", "Coconut Pasta[60]", "Couscous[110]", "Dark Pudding[90]", "Date Palms Wine[90]", "Desert Dumpling[30]", "Exotic Herbal Wine[30]", "Fig Pie[60]", "Fish Fillet Salad[60]", "Fish Soup[60]", "Fried Bird[60]", "Fried Vegetables[30]", "Fruit and Vegetable Salad[60]", "Fruit Juice[30]", "Fruit Pie[90]", "Fruit Pudding[30]", "Fruit Wine[60]", "Grain Soup[30]", "Grilled Sausage[30]", "Grilled Scorpion[90]", "Ham Sandwich[90]", "Honey Wine[60]", "Hunter's Salad[30]", "Healthy Sute Tea[110]", "Jungle Hamburger[110]", "Khalk's Fermented Wine[60]", "Knight Combat Rations[120]", "Lean Meat Salad[90]", "Lizard Kebab[30]", "Margoria Seafood Extravaganza[90]", "Meat Croquette[90]", "Meat Pasta[60]", "Meat Pie[60]", "Meat Sandwich[90]", "Meat Soup[30]", "Meat Stew[30]", "Mediah Special[90]", "Milk Tea[90]", "Omelet[60]", "Pickled Fish[60]", "Pickled Vegetables[60]", "Pistachio Rice[90]", "Prawn Salad[60]", "Seafood Grilled with Butter[30]", "Seafood Mushroom Salad[30]", "Seafood Pasta[60]", "Serendia Special[90]", "Smoked Fish Steak[60]", "Soft Bread[30]", "Steak[60]", "Steamed Bird[60]", "Steamed Fish[30]", "Steamed Prawn[60]", "Steamed Seafood[60]", "Steamed Whale Meat[75]", "Stir-fried Gazelle Hind Leg[60]", "Stir-Fried Meat[60]", "Stir-Fried Oyster[60]", "Stir-Fried Seafood[30]", "Stir-fried Vegetables[30]", "Sute Tea[90]", "Tea With Fine Scent[60]", "Teff Bread[110]", "Teff Sandwich[110]", "Valencian Special[120]", "Whale Meat Salad[75]" }));
         cbFirstFood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbFirstFoodActionPerformed(evt);
@@ -76,10 +92,11 @@ public class principalForm extends javax.swing.JFrame {
             }
         });
 
-        cbSecondFood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Test[31]", "Aloe Cookie[30]", "Aloe Yogurt[30]", "Arehaza Special[90]", "Assorted Side Dishes[90]", "Balenos Special[90]", "Beehive Cookie[90]", "Boiled Bird Eggs[30]", "Borscht[60]", "Butter-Roasted Lobster[60]", "Calpheon Special[90]", "Cheese Gratin[90]", "Coconut Cocktails[60]", "Coconut Fried Fish[60]", "Coconut Pasta[60]", "Couscous[110]", "Dark Pudding[90]", "Date Palms Wine[90]", "Desert Dumpling[30]", "Exotic Herbal Wine[30]", "Fig Pie[60]", "Fish Fillet Salad[60]", "Fish Soup[60]", "Fried Bird[60]", "Fried Vegetables[30]", "Fruit and Vegetable Salad[60]", "Fruit Juice[30]", "Fruit Pie[90]", "Fruit Pudding[30]", "Fruit Wine[60]", "Grain Soup[30]", "Grilled Sausage[30]", "Grilled Scorpion[90]", "Ham Sandwich[90]", "Honey Wine[60]", "Hunter's Salad[30]", "Healthy Sute Tea[110]", "Jungle Hamburger[110]", "Khalk's Fermented Wine[60]", "Knight Combat Rations[120]", "Lean Meat Salad[90]", "Lizard Kebab[30]", "Margoria Seafood Extravaganza[90]", "Meat Croquette[90]", "Meat Pasta[60]", "Meat Pie[60]", "Meat Sandwich[90]", "Meat Soup[30]", "Meat Stew[30]", "Mediah Special[90]", "Milk Tea[90]", "Omelet[60]", "Pickled Fish[60]", "Pickled Vegetables[60]", "Pistachio Rice[90]", "Prawn Salad[60]", "Seafood Grilled with Butter[30]", "Seafood Mushroom Salad[30]", "Seafood Pasta[60]", "Serendia Special[90]", "Smoked Fish Steak[60]", "Soft Bread[30]", "Steak[60]", "Steamed Bird[60]", "Steamed Fish[30]", "Steamed Prawn[60]", "Steamed Seafood[60]", "Steamed Whale Meat[75]", "Stir-fried Gazelle Hind Leg[60]", "Stir-Fried Meat[60]", "Stir-Fried Oyster[60]", "Stir-Fried Seafood[30]", "Stir-fried Vegetables[30]", "Sute Tea[90]", "Tea With Fine Scent[60]", "Teff Bread[110]", "Teff Sandwich[110]", "Valencian Special[120]", "Whale Meat Salad[75]" }));
-        cbSecondFood.addActionListener(new java.awt.event.ActionListener() {
+        bAteSecondFood.setActionCommand("n");
+        bAteSecondFood.setLabel("Ate the food");
+        bAteSecondFood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbSecondFoodActionPerformed(evt);
+                bAteSecondFoodActionPerformed(evt);
             }
         });
 
@@ -95,16 +112,118 @@ public class principalForm extends javax.swing.JFrame {
             }
         });
 
-        bAteSecondFood.setActionCommand("n");
-        bAteSecondFood.setLabel("Ate the food");
-        bAteSecondFood.addActionListener(new java.awt.event.ActionListener() {
+        cbSecondFood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Test[5]", "Aloe Cookie[30]", "Aloe Yogurt[30]", "Arehaza Special[90]", "Assorted Side Dishes[90]", "Balenos Special[90]", "Beehive Cookie[90]", "Boiled Bird Eggs[30]", "Borscht[60]", "Butter-Roasted Lobster[60]", "Calpheon Special[90]", "Cheese Gratin[90]", "Coconut Cocktails[60]", "Coconut Fried Fish[60]", "Coconut Pasta[60]", "Couscous[110]", "Dark Pudding[90]", "Date Palms Wine[90]", "Desert Dumpling[30]", "Exotic Herbal Wine[30]", "Fig Pie[60]", "Fish Fillet Salad[60]", "Fish Soup[60]", "Fried Bird[60]", "Fried Vegetables[30]", "Fruit and Vegetable Salad[60]", "Fruit Juice[30]", "Fruit Pie[90]", "Fruit Pudding[30]", "Fruit Wine[60]", "Grain Soup[30]", "Grilled Sausage[30]", "Grilled Scorpion[90]", "Ham Sandwich[90]", "Honey Wine[60]", "Hunter's Salad[30]", "Healthy Sute Tea[110]", "Jungle Hamburger[110]", "Khalk's Fermented Wine[60]", "Knight Combat Rations[120]", "Lean Meat Salad[90]", "Lizard Kebab[30]", "Margoria Seafood Extravaganza[90]", "Meat Croquette[90]", "Meat Pasta[60]", "Meat Pie[60]", "Meat Sandwich[90]", "Meat Soup[30]", "Meat Stew[30]", "Mediah Special[90]", "Milk Tea[90]", "Omelet[60]", "Pickled Fish[60]", "Pickled Vegetables[60]", "Pistachio Rice[90]", "Prawn Salad[60]", "Seafood Grilled with Butter[30]", "Seafood Mushroom Salad[30]", "Seafood Pasta[60]", "Serendia Special[90]", "Smoked Fish Steak[60]", "Soft Bread[30]", "Steak[60]", "Steamed Bird[60]", "Steamed Fish[30]", "Steamed Prawn[60]", "Steamed Seafood[60]", "Steamed Whale Meat[75]", "Stir-fried Gazelle Hind Leg[60]", "Stir-Fried Meat[60]", "Stir-Fried Oyster[60]", "Stir-Fried Seafood[30]", "Stir-fried Vegetables[30]", "Sute Tea[90]", "Tea With Fine Scent[60]", "Teff Bread[110]", "Teff Sandwich[110]", "Valencian Special[120]", "Whale Meat Salad[75]" }));
+        cbSecondFood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bAteSecondFoodActionPerformed(evt);
+                cbSecondFoodActionPerformed(evt);
             }
         });
 
-        jFirstFoodIcon.setMaximumSize(new java.awt.Dimension(42, 42));
-        jFirstFoodIcon.setMinimumSize(new java.awt.Dimension(42, 42));
+        jSecondFoodIcon.setMaximumSize(new java.awt.Dimension(42, 42));
+        jSecondFoodIcon.setMinimumSize(new java.awt.Dimension(42, 42));
+
+        lSelect1.setText("2 - Click on the button to when you ate the food in the game.");
+
+        lSelect2.setText("3 - The timer will start and will remaind you witch food is ending and when you can eat again");
+
+        javax.swing.GroupLayout jPanelFoodLayout = new javax.swing.GroupLayout(jPanelFood);
+        jPanelFood.setLayout(jPanelFoodLayout);
+        jPanelFoodLayout.setHorizontalGroup(
+            jPanelFoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelFoodLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelFoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lRemainder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanelFoodLayout.createSequentialGroup()
+                        .addGroup(jPanelFoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanelFoodLayout.createSequentialGroup()
+                                .addComponent(jFirstFoodIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbFirstFood, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(23, 23, 23)
+                                .addComponent(tfFirstFoodClock, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelFoodLayout.createSequentialGroup()
+                                .addComponent(jSecondFoodIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbSecondFood, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(24, 24, 24)
+                                .addComponent(tfSecondFoodClock, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanelFoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bAteSecondFood, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bAteFirstFood, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanelFoodLayout.createSequentialGroup()
+                        .addGroup(jPanelFoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lSelect1, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lSelect2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanelFoodLayout.setVerticalGroup(
+            jPanelFoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelFoodLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lRemainder)
+                .addGap(20, 20, 20)
+                .addComponent(lSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lSelect1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lSelect2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelFoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jFirstFoodIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanelFoodLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addGroup(jPanelFoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelFoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(cbFirstFood)
+                                .addComponent(tfFirstFoodClock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(bAteFirstFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(jPanelFoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelFoodLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(jPanelFoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfSecondFoodClock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbSecondFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanelFoodLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jSecondFoodIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelFoodLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(bAteSecondFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(8, 8, 8))
+        );
+
+        jButton1.setText("Food");
+
+        jButton2.setText("Stopwatch");
+
+        jButton3.setText("Ogre ");
+
+        javax.swing.GroupLayout jPanelMenuLayout = new javax.swing.GroupLayout(jPanelMenu);
+        jPanelMenu.setLayout(jPanelMenuLayout);
+        jPanelMenuLayout.setHorizontalGroup(
+            jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMenuLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(156, 156, 156)
+                .addComponent(jButton3)
+                .addGap(31, 31, 31))
+        );
+        jPanelMenuLayout.setVerticalGroup(
+            jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMenuLayout.createSequentialGroup()
+                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,55 +231,17 @@ public class principalForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lRemainder, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
-                        .addContainerGap(391, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(52, 52, 52)
-                                .addComponent(cbSecondFood, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(tfSecondFoodClock, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(bAteSecondFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(jFirstFoodIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbFirstFood, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(tfFirstFoodClock, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(bAteFirstFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                .addComponent(jPanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanelFood, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lRemainder)
+                .addGap(7, 7, 7)
+                .addComponent(jPanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jFirstFoodIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cbFirstFood)
-                            .addComponent(tfFirstFoodClock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(bAteFirstFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(154, 154, 154)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cbSecondFood, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tfSecondFoodClock, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(bAteSecondFood, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addComponent(jPanelFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(177, Short.MAX_VALUE))
         );
 
         pack();
@@ -207,17 +288,46 @@ public class principalForm extends javax.swing.JFrame {
         t = Integer.parseInt(time);
         int h = t / 60;
         int m = t % 60;
-        time = "0";
+        int s = 0;
+        //Debug to see if its getting the number right
+        /*time = "0";
         time = time + Integer.toString(h) + ":";
         if(m == 0)
             time = time + "0";
         time = time + Integer.toString(m) + ":" + "00";
         tfFirstFoodClock.setText(time);
-        updateTimer(time);
+        */
+        runTimer tSFood = new runTimer(h,m,s);
+        tSFood.stTimer.scheduleAtFixedRate(tSFood.task, 1000, 1000);
+        tfFirstFoodClock.setText(tSFood.h + ":" + tSFood.m + ":" + tSFood.s);
+        Timer updateText = new Timer();
+        updateText.schedule(new TimerTask() {
+        @Override public void run() {
+              tfFirstFoodClock.setText(tSFood.h + ":" + tSFood.m + ":" + tSFood.s);
+              if(tSFood.h == 0 && tSFood.m == 0 && tSFood.s == 0){
+                  updateText.cancel();
+              }
+        }
+        }, 1000, 1000);
+        
     }//GEN-LAST:event_bAteFirstFoodActionPerformed
 
     private void cbSecondFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSecondFoodActionPerformed
-        // TODO add your handling code here:
+                //Set the path to the img and fix the name.
+        String foodName = cbSecondFood.getSelectedItem().toString();
+        String path = "resources/img";
+        path = path + "/" + foodName;
+        int ini, end;
+        ini = path.indexOf("[");
+        end = path.indexOf("]") + 1;
+        path = path.replace(path.substring(ini, end), "");
+        path = path.replace(" ", "");
+        path = path + ".png";
+        //Just Debug
+        //lRemainder.setText(path);
+        //lRemainder.setVisible(true);      
+        ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource(path));
+        jSecondFoodIcon.setIcon(icon);
     }//GEN-LAST:event_cbSecondFoodActionPerformed
 
     private void tfSecondFoodClockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSecondFoodClockActionPerformed
@@ -225,14 +335,45 @@ public class principalForm extends javax.swing.JFrame {
     }//GEN-LAST:event_tfSecondFoodClockActionPerformed
 
     private void bAteSecondFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAteSecondFoodActionPerformed
-        // TODO add your handling code here:
+        //Time is the string to hold what will be replaced in the textbox
+        String time;
+        //This label will be activate when the food get 30 min or less of duration
+        String labelRemainder = "You should eat ";
+        //Get The food name.
+        String SecondFoodName = cbSecondFood.getSelectedItem().toString();
+        labelRemainder = labelRemainder + SecondFoodName;
+        lRemainder.setText(labelRemainder);
+        lRemainder.setVisible(true);
+        time = SecondFoodName;
+        time = time.substring(time.indexOf("[") + 1);
+        time = time.substring(0, time.indexOf("]"));
+        int t;
+        t = Integer.parseInt(time);
+        int h = t / 60;
+        int m = t % 60;
+        int s = 0;
+        //Debug to see if its getting the number right
+        /*time = "0";
+        time = time + Integer.toString(h) + ":";
+        if(m == 0)
+            time = time + "0";
+        time = time + Integer.toString(m) + ":" + "00";
+        tfSecondFoodClock.setText(time);
+        */
+        runTimer tSFood = new runTimer(h,m,s);
+        tSFood.stTimer.scheduleAtFixedRate(tSFood.task, 1000, 1000);
+        tfSecondFoodClock.setText(tSFood.h + ":" + tSFood.m + ":" + tSFood.s);
+        Timer updateText = new Timer();
+        updateText.schedule(new TimerTask() {
+        @Override public void run() {
+              tfSecondFoodClock.setText(tSFood.h + ":" + tSFood.m + ":" + tSFood.s);
+              if(tSFood.h == 0 && tSFood.m == 0 && tSFood.s == 0){
+                  updateText.cancel();
+              }
+        }
+        }, 1000, 1000);
     }//GEN-LAST:event_bAteSecondFoodActionPerformed
-       public static void updateTimer(String time){
-           String newTime;
-           int t;
-           t = Integer.parseInt(time);
-           
-       }
+
     /**
      * @param args the command line arguments
      */
@@ -273,9 +414,17 @@ public class principalForm extends javax.swing.JFrame {
     private java.awt.Button bAteSecondFood;
     private javax.swing.JComboBox<String> cbFirstFood;
     private javax.swing.JComboBox<String> cbSecondFood;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jFirstFoodIcon;
+    private javax.swing.JPanel jPanelFood;
+    private javax.swing.JPanel jPanelMenu;
+    private javax.swing.JLabel jSecondFoodIcon;
     private javax.swing.JLabel lRemainder;
     private java.awt.Label lSelect;
+    private java.awt.Label lSelect1;
+    private java.awt.Label lSelect2;
     private javax.swing.JTextField tfFirstFoodClock;
     private javax.swing.JTextField tfSecondFoodClock;
     // End of variables declaration//GEN-END:variables
