@@ -23,396 +23,666 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanelMenu" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jMainPanel" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanelMenu" alignment="0" max="32767" attributes="0"/>
+              </Group>
           </Group>
-          <Component id="jPanelFood" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
               <Component id="jPanelMenu" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanelFood" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="177" max="32767" attributes="0"/>
+              <Component id="jMainPanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="108" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanelFood">
+    <Container class="javax.swing.JPanel" name="jMainPanel">
 
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lRemainder" alignment="0" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jFirstFoodIcon" min="-2" pref="42" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="cbFirstFood" min="-2" pref="220" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                  <Component id="tfFirstFoodClock" min="-2" pref="133" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="jSecondFoodIcon" min="-2" pref="42" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="cbSecondFood" min="-2" pref="220" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                  <Component id="tfSecondFoodClock" min="-2" pref="133" max="-2" attributes="0"/>
-                              </Group>
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="jFoodPanel">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="FoodPanel"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lRemainder" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jFirstFoodIcon" min="-2" pref="42" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="cbFirstFood" min="-2" pref="220" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                              <Component id="tfFirstFoodClock" min="-2" pref="133" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="bAteFirstFood" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="bAteSecondFood" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="bAteFirstFood" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jSecondFoodIcon" min="-2" pref="42" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="cbSecondFood" min="-2" pref="220" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="tfSecondFoodClock" min="-2" pref="133" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="bAteSecondFood" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jThirdFoodIcon" min="-2" pref="42" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="cbThirdFood" min="-2" pref="220" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="tfThirdFoodClock" min="-2" pref="133" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="bStopAll1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lSelect1" alignment="0" min="-2" pref="408" max="-2" attributes="0"/>
+                                  <Component id="lSelect2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lSelect" alignment="0" min="-2" pref="225" max="-2" attributes="0"/>
+                                  <Component id="label2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Component id="tfCdClock" min="-2" pref="133" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                                      <Component id="bStopAll" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="42" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lSelect1" alignment="0" min="-2" pref="408" max="-2" attributes="0"/>
-                              <Component id="lSelect2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lSelect" alignment="0" min="-2" pref="225" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
               </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Component id="lRemainder" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  <Component id="lSelect" min="-2" pref="18" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="lSelect1" min="-2" pref="18" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="lSelect2" min="-2" pref="18" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jFirstFoodIcon" min="-2" pref="42" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="lRemainder" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lSelect" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lSelect1" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lSelect2" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jFirstFoodIcon" min="-2" pref="42" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="cbFirstFood" alignment="3" max="32767" attributes="0"/>
+                                      <Component id="tfFirstFoodClock" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="bAteFirstFood" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jSecondFoodIcon" min="-2" pref="42" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="cbFirstFood" alignment="3" max="32767" attributes="0"/>
-                                  <Component id="tfFirstFoodClock" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tfSecondFoodClock" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbSecondFood" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="bAteFirstFood" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="bAteSecondFood" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                  </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="tfSecondFoodClock" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cbSecondFood" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jThirdFoodIcon" alignment="1" min="-2" pref="42" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                              <Component id="bStopAll1" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="tfThirdFoodClock" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbThirdFood" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jSecondFoodIcon" min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="label2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="label3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="bStopAll" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfCdClock" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                          <Component id="bAteSecondFood" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
               </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="java.awt.Label" name="lSelect">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="1 - Select your food from the list."/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lRemainder">
-          <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="You should eat: "/>
-            <Property name="name" type="java.lang.String" value="lRemainder" noResource="true"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jFirstFoodIcon">
-          <Properties>
-            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[42, 42]"/>
-            </Property>
-            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[42, 42]"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="cbFirstFood">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="78">
-                <StringItem index="0" value="Aloe Cookie[30]"/>
-                <StringItem index="1" value="Aloe Yogurt[30]"/>
-                <StringItem index="2" value="Arehaza Special[90]"/>
-                <StringItem index="3" value="Assorted Side Dishes[90]"/>
-                <StringItem index="4" value="Balenos Special[90]"/>
-                <StringItem index="5" value="Beehive Cookie[90]"/>
-                <StringItem index="6" value="Boiled Bird Eggs[30]"/>
-                <StringItem index="7" value="Borscht[60]"/>
-                <StringItem index="8" value="Butter-Roasted Lobster[60]"/>
-                <StringItem index="9" value="Calpheon Special[90]"/>
-                <StringItem index="10" value="Cheese Gratin[90]"/>
-                <StringItem index="11" value="Coconut Cocktails[60]"/>
-                <StringItem index="12" value="Coconut Fried Fish[60]"/>
-                <StringItem index="13" value="Coconut Pasta[60]"/>
-                <StringItem index="14" value="Couscous[110]"/>
-                <StringItem index="15" value="Dark Pudding[90]"/>
-                <StringItem index="16" value="Date Palms Wine[90]"/>
-                <StringItem index="17" value="Desert Dumpling[30]"/>
-                <StringItem index="18" value="Exotic Herbal Wine[30]"/>
-                <StringItem index="19" value="Fig Pie[60]"/>
-                <StringItem index="20" value="Fish Fillet Salad[60]"/>
-                <StringItem index="21" value="Fish Soup[60]"/>
-                <StringItem index="22" value="Fried Bird[60]"/>
-                <StringItem index="23" value="Fried Vegetables[30]"/>
-                <StringItem index="24" value="Fruit and Vegetable Salad[60]"/>
-                <StringItem index="25" value="Fruit Juice[30]"/>
-                <StringItem index="26" value="Fruit Pie[90]"/>
-                <StringItem index="27" value="Fruit Pudding[30]"/>
-                <StringItem index="28" value="Fruit Wine[60]"/>
-                <StringItem index="29" value="Grain Soup[30]"/>
-                <StringItem index="30" value="Grilled Sausage[30]"/>
-                <StringItem index="31" value="Grilled Scorpion[90]"/>
-                <StringItem index="32" value="Ham Sandwich[90]"/>
-                <StringItem index="33" value="Honey Wine[60]"/>
-                <StringItem index="34" value="Hunter&apos;s Salad[30]"/>
-                <StringItem index="35" value="Healthy Sute Tea[110]"/>
-                <StringItem index="36" value="Jungle Hamburger[110]"/>
-                <StringItem index="37" value="Khalk&apos;s Fermented Wine[60]"/>
-                <StringItem index="38" value="Knight Combat Rations[120]"/>
-                <StringItem index="39" value="Lean Meat Salad[90]"/>
-                <StringItem index="40" value="Lizard Kebab[30]"/>
-                <StringItem index="41" value="Margoria Seafood Extravaganza[90]"/>
-                <StringItem index="42" value="Meat Croquette[90]"/>
-                <StringItem index="43" value="Meat Pasta[60]"/>
-                <StringItem index="44" value="Meat Pie[60]"/>
-                <StringItem index="45" value="Meat Sandwich[90]"/>
-                <StringItem index="46" value="Meat Soup[30]"/>
-                <StringItem index="47" value="Meat Stew[30]"/>
-                <StringItem index="48" value="Mediah Special[90]"/>
-                <StringItem index="49" value="Milk Tea[90]"/>
-                <StringItem index="50" value="Omelet[60]"/>
-                <StringItem index="51" value="Pickled Fish[60]"/>
-                <StringItem index="52" value="Pickled Vegetables[60]"/>
-                <StringItem index="53" value="Pistachio Rice[90]"/>
-                <StringItem index="54" value="Prawn Salad[60]"/>
-                <StringItem index="55" value="Seafood Grilled with Butter[30]"/>
-                <StringItem index="56" value="Seafood Mushroom Salad[30]"/>
-                <StringItem index="57" value="Seafood Pasta[60]"/>
-                <StringItem index="58" value="Serendia Special[90]"/>
-                <StringItem index="59" value="Smoked Fish Steak[60]"/>
-                <StringItem index="60" value="Soft Bread[30]"/>
-                <StringItem index="61" value="Steak[60]"/>
-                <StringItem index="62" value="Steamed Bird[60]"/>
-                <StringItem index="63" value="Steamed Fish[30]"/>
-                <StringItem index="64" value="Steamed Prawn[60]"/>
-                <StringItem index="65" value="Steamed Seafood[60]"/>
-                <StringItem index="66" value="Steamed Whale Meat[75]"/>
-                <StringItem index="67" value="Stir-fried Gazelle Hind Leg[60]"/>
-                <StringItem index="68" value="Stir-Fried Meat[60]"/>
-                <StringItem index="69" value="Stir-Fried Oyster[60]"/>
-                <StringItem index="70" value="Stir-Fried Seafood[30]"/>
-                <StringItem index="71" value="Stir-fried Vegetables[30]"/>
-                <StringItem index="72" value="Sute Tea[90]"/>
-                <StringItem index="73" value="Tea With Fine Scent[60]"/>
-                <StringItem index="74" value="Teff Bread[110]"/>
-                <StringItem index="75" value="Teff Sandwich[110]"/>
-                <StringItem index="76" value="Valencian Special[120]"/>
-                <StringItem index="77" value="Whale Meat Salad[75]"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbFirstFoodActionPerformed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JTextField" name="tfFirstFoodClock">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lucida Grande" size="14" style="0"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="00:00:00"/>
-            <Property name="enabled" type="boolean" value="false"/>
-            <Property name="name" type="java.lang.String" value="firstFoodClock" noResource="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfFirstFoodClockActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="java.awt.Button" name="bAteFirstFood">
-          <Properties>
-            <Property name="actionCommand" type="java.lang.String" value="n"/>
-            <Property name="label" type="java.lang.String" value="Ate the food"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bAteFirstFoodActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="java.awt.Button" name="bAteSecondFood">
-          <Properties>
-            <Property name="actionCommand" type="java.lang.String" value="n"/>
-            <Property name="label" type="java.lang.String" value="Ate the food"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bAteSecondFoodActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="tfSecondFoodClock">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lucida Grande" size="14" style="0"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="00:00:00"/>
-            <Property name="enabled" type="boolean" value="false"/>
-            <Property name="name" type="java.lang.String" value="firstFoodClock" noResource="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfSecondFoodClockActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="cbSecondFood">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="79">
-                <StringItem index="0" value="Test[5]"/>
-                <StringItem index="1" value="Aloe Cookie[30]"/>
-                <StringItem index="2" value="Aloe Yogurt[30]"/>
-                <StringItem index="3" value="Arehaza Special[90]"/>
-                <StringItem index="4" value="Assorted Side Dishes[90]"/>
-                <StringItem index="5" value="Balenos Special[90]"/>
-                <StringItem index="6" value="Beehive Cookie[90]"/>
-                <StringItem index="7" value="Boiled Bird Eggs[30]"/>
-                <StringItem index="8" value="Borscht[60]"/>
-                <StringItem index="9" value="Butter-Roasted Lobster[60]"/>
-                <StringItem index="10" value="Calpheon Special[90]"/>
-                <StringItem index="11" value="Cheese Gratin[90]"/>
-                <StringItem index="12" value="Coconut Cocktails[60]"/>
-                <StringItem index="13" value="Coconut Fried Fish[60]"/>
-                <StringItem index="14" value="Coconut Pasta[60]"/>
-                <StringItem index="15" value="Couscous[110]"/>
-                <StringItem index="16" value="Dark Pudding[90]"/>
-                <StringItem index="17" value="Date Palms Wine[90]"/>
-                <StringItem index="18" value="Desert Dumpling[30]"/>
-                <StringItem index="19" value="Exotic Herbal Wine[30]"/>
-                <StringItem index="20" value="Fig Pie[60]"/>
-                <StringItem index="21" value="Fish Fillet Salad[60]"/>
-                <StringItem index="22" value="Fish Soup[60]"/>
-                <StringItem index="23" value="Fried Bird[60]"/>
-                <StringItem index="24" value="Fried Vegetables[30]"/>
-                <StringItem index="25" value="Fruit and Vegetable Salad[60]"/>
-                <StringItem index="26" value="Fruit Juice[30]"/>
-                <StringItem index="27" value="Fruit Pie[90]"/>
-                <StringItem index="28" value="Fruit Pudding[30]"/>
-                <StringItem index="29" value="Fruit Wine[60]"/>
-                <StringItem index="30" value="Grain Soup[30]"/>
-                <StringItem index="31" value="Grilled Sausage[30]"/>
-                <StringItem index="32" value="Grilled Scorpion[90]"/>
-                <StringItem index="33" value="Ham Sandwich[90]"/>
-                <StringItem index="34" value="Honey Wine[60]"/>
-                <StringItem index="35" value="Hunter&apos;s Salad[30]"/>
-                <StringItem index="36" value="Healthy Sute Tea[110]"/>
-                <StringItem index="37" value="Jungle Hamburger[110]"/>
-                <StringItem index="38" value="Khalk&apos;s Fermented Wine[60]"/>
-                <StringItem index="39" value="Knight Combat Rations[120]"/>
-                <StringItem index="40" value="Lean Meat Salad[90]"/>
-                <StringItem index="41" value="Lizard Kebab[30]"/>
-                <StringItem index="42" value="Margoria Seafood Extravaganza[90]"/>
-                <StringItem index="43" value="Meat Croquette[90]"/>
-                <StringItem index="44" value="Meat Pasta[60]"/>
-                <StringItem index="45" value="Meat Pie[60]"/>
-                <StringItem index="46" value="Meat Sandwich[90]"/>
-                <StringItem index="47" value="Meat Soup[30]"/>
-                <StringItem index="48" value="Meat Stew[30]"/>
-                <StringItem index="49" value="Mediah Special[90]"/>
-                <StringItem index="50" value="Milk Tea[90]"/>
-                <StringItem index="51" value="Omelet[60]"/>
-                <StringItem index="52" value="Pickled Fish[60]"/>
-                <StringItem index="53" value="Pickled Vegetables[60]"/>
-                <StringItem index="54" value="Pistachio Rice[90]"/>
-                <StringItem index="55" value="Prawn Salad[60]"/>
-                <StringItem index="56" value="Seafood Grilled with Butter[30]"/>
-                <StringItem index="57" value="Seafood Mushroom Salad[30]"/>
-                <StringItem index="58" value="Seafood Pasta[60]"/>
-                <StringItem index="59" value="Serendia Special[90]"/>
-                <StringItem index="60" value="Smoked Fish Steak[60]"/>
-                <StringItem index="61" value="Soft Bread[30]"/>
-                <StringItem index="62" value="Steak[60]"/>
-                <StringItem index="63" value="Steamed Bird[60]"/>
-                <StringItem index="64" value="Steamed Fish[30]"/>
-                <StringItem index="65" value="Steamed Prawn[60]"/>
-                <StringItem index="66" value="Steamed Seafood[60]"/>
-                <StringItem index="67" value="Steamed Whale Meat[75]"/>
-                <StringItem index="68" value="Stir-fried Gazelle Hind Leg[60]"/>
-                <StringItem index="69" value="Stir-Fried Meat[60]"/>
-                <StringItem index="70" value="Stir-Fried Oyster[60]"/>
-                <StringItem index="71" value="Stir-Fried Seafood[30]"/>
-                <StringItem index="72" value="Stir-fried Vegetables[30]"/>
-                <StringItem index="73" value="Sute Tea[90]"/>
-                <StringItem index="74" value="Tea With Fine Scent[60]"/>
-                <StringItem index="75" value="Teff Bread[110]"/>
-                <StringItem index="76" value="Teff Sandwich[110]"/>
-                <StringItem index="77" value="Valencian Special[120]"/>
-                <StringItem index="78" value="Whale Meat Salad[75]"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbSecondFoodActionPerformed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jSecondFoodIcon">
-          <Properties>
-            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[42, 42]"/>
-            </Property>
-            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[42, 42]"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="java.awt.Label" name="lSelect1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="2 - Click on the button to when you ate the food in the game."/>
-          </Properties>
-        </Component>
-        <Component class="java.awt.Label" name="lSelect2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="3 - The timer will start and will remaind you witch food is ending and when you can eat again"/>
-          </Properties>
-        </Component>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="java.awt.Label" name="lSelect">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="1 - Select your food from the list."/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lRemainder">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="You should eat: "/>
+                <Property name="name" type="java.lang.String" value="lRemainder" noResource="true"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jFirstFoodIcon">
+              <Properties>
+                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[42, 42]"/>
+                </Property>
+                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[42, 42]"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbFirstFood">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="78">
+                    <StringItem index="0" value="Aloe Cookie[30]"/>
+                    <StringItem index="1" value="Aloe Yogurt[30]"/>
+                    <StringItem index="2" value="Arehaza Special[90]"/>
+                    <StringItem index="3" value="Assorted Side Dishes[90]"/>
+                    <StringItem index="4" value="Balenos Special[90]"/>
+                    <StringItem index="5" value="Beehive Cookie[90]"/>
+                    <StringItem index="6" value="Boiled Bird Eggs[30]"/>
+                    <StringItem index="7" value="Borscht[60]"/>
+                    <StringItem index="8" value="Butter-Roasted Lobster[60]"/>
+                    <StringItem index="9" value="Calpheon Special[90]"/>
+                    <StringItem index="10" value="Cheese Gratin[90]"/>
+                    <StringItem index="11" value="Coconut Cocktails[60]"/>
+                    <StringItem index="12" value="Coconut Fried Fish[60]"/>
+                    <StringItem index="13" value="Coconut Pasta[60]"/>
+                    <StringItem index="14" value="Couscous[110]"/>
+                    <StringItem index="15" value="Dark Pudding[90]"/>
+                    <StringItem index="16" value="Date Palms Wine[90]"/>
+                    <StringItem index="17" value="Desert Dumpling[30]"/>
+                    <StringItem index="18" value="Exotic Herbal Wine[30]"/>
+                    <StringItem index="19" value="Fig Pie[60]"/>
+                    <StringItem index="20" value="Fish Fillet Salad[60]"/>
+                    <StringItem index="21" value="Fish Soup[60]"/>
+                    <StringItem index="22" value="Fried Bird[60]"/>
+                    <StringItem index="23" value="Fried Vegetables[30]"/>
+                    <StringItem index="24" value="Fruit and Vegetable Salad[60]"/>
+                    <StringItem index="25" value="Fruit Juice[30]"/>
+                    <StringItem index="26" value="Fruit Pie[90]"/>
+                    <StringItem index="27" value="Fruit Pudding[30]"/>
+                    <StringItem index="28" value="Fruit Wine[60]"/>
+                    <StringItem index="29" value="Grain Soup[30]"/>
+                    <StringItem index="30" value="Grilled Sausage[30]"/>
+                    <StringItem index="31" value="Grilled Scorpion[90]"/>
+                    <StringItem index="32" value="Ham Sandwich[90]"/>
+                    <StringItem index="33" value="Honey Wine[60]"/>
+                    <StringItem index="34" value="Hunter&apos;s Salad[30]"/>
+                    <StringItem index="35" value="Healthy Sute Tea[110]"/>
+                    <StringItem index="36" value="Jungle Hamburger[110]"/>
+                    <StringItem index="37" value="Khalk&apos;s Fermented Wine[60]"/>
+                    <StringItem index="38" value="Knight Combat Rations[120]"/>
+                    <StringItem index="39" value="Lean Meat Salad[90]"/>
+                    <StringItem index="40" value="Lizard Kebab[30]"/>
+                    <StringItem index="41" value="Margoria Seafood Extravaganza[90]"/>
+                    <StringItem index="42" value="Meat Croquette[90]"/>
+                    <StringItem index="43" value="Meat Pasta[60]"/>
+                    <StringItem index="44" value="Meat Pie[60]"/>
+                    <StringItem index="45" value="Meat Sandwich[90]"/>
+                    <StringItem index="46" value="Meat Soup[30]"/>
+                    <StringItem index="47" value="Meat Stew[30]"/>
+                    <StringItem index="48" value="Mediah Special[90]"/>
+                    <StringItem index="49" value="Milk Tea[90]"/>
+                    <StringItem index="50" value="Omelet[60]"/>
+                    <StringItem index="51" value="Pickled Fish[60]"/>
+                    <StringItem index="52" value="Pickled Vegetables[60]"/>
+                    <StringItem index="53" value="Pistachio Rice[90]"/>
+                    <StringItem index="54" value="Prawn Salad[60]"/>
+                    <StringItem index="55" value="Seafood Grilled with Butter[30]"/>
+                    <StringItem index="56" value="Seafood Mushroom Salad[30]"/>
+                    <StringItem index="57" value="Seafood Pasta[60]"/>
+                    <StringItem index="58" value="Serendia Special[90]"/>
+                    <StringItem index="59" value="Smoked Fish Steak[60]"/>
+                    <StringItem index="60" value="Soft Bread[30]"/>
+                    <StringItem index="61" value="Steak[60]"/>
+                    <StringItem index="62" value="Steamed Bird[60]"/>
+                    <StringItem index="63" value="Steamed Fish[30]"/>
+                    <StringItem index="64" value="Steamed Prawn[60]"/>
+                    <StringItem index="65" value="Steamed Seafood[60]"/>
+                    <StringItem index="66" value="Steamed Whale Meat[75]"/>
+                    <StringItem index="67" value="Stir-fried Gazelle Hind Leg[60]"/>
+                    <StringItem index="68" value="Stir-Fried Meat[60]"/>
+                    <StringItem index="69" value="Stir-Fried Oyster[60]"/>
+                    <StringItem index="70" value="Stir-Fried Seafood[30]"/>
+                    <StringItem index="71" value="Stir-fried Vegetables[30]"/>
+                    <StringItem index="72" value="Sute Tea[90]"/>
+                    <StringItem index="73" value="Tea With Fine Scent[60]"/>
+                    <StringItem index="74" value="Teff Bread[110]"/>
+                    <StringItem index="75" value="Teff Sandwich[110]"/>
+                    <StringItem index="76" value="Valencian Special[120]"/>
+                    <StringItem index="77" value="Whale Meat Salad[75]"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbFirstFoodActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfFirstFoodClock">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Grande" size="14" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="00:00:00"/>
+                <Property name="enabled" type="boolean" value="false"/>
+                <Property name="name" type="java.lang.String" value="firstFoodClock" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfFirstFoodClockActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="java.awt.Button" name="bAteFirstFood">
+              <Properties>
+                <Property name="actionCommand" type="java.lang.String" value="n"/>
+                <Property name="label" type="java.lang.String" value="Ate the food"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bAteFirstFoodActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="java.awt.Button" name="bAteSecondFood">
+              <Properties>
+                <Property name="actionCommand" type="java.lang.String" value="n"/>
+                <Property name="label" type="java.lang.String" value="Ate the food"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bAteSecondFoodActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfSecondFoodClock">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Grande" size="14" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="00:00:00"/>
+                <Property name="enabled" type="boolean" value="false"/>
+                <Property name="name" type="java.lang.String" value="firstFoodClock" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfSecondFoodClockActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbSecondFood">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="79">
+                    <StringItem index="0" value="Test[5]"/>
+                    <StringItem index="1" value="Aloe Cookie[30]"/>
+                    <StringItem index="2" value="Aloe Yogurt[30]"/>
+                    <StringItem index="3" value="Arehaza Special[90]"/>
+                    <StringItem index="4" value="Assorted Side Dishes[90]"/>
+                    <StringItem index="5" value="Balenos Special[90]"/>
+                    <StringItem index="6" value="Beehive Cookie[90]"/>
+                    <StringItem index="7" value="Boiled Bird Eggs[30]"/>
+                    <StringItem index="8" value="Borscht[60]"/>
+                    <StringItem index="9" value="Butter-Roasted Lobster[60]"/>
+                    <StringItem index="10" value="Calpheon Special[90]"/>
+                    <StringItem index="11" value="Cheese Gratin[90]"/>
+                    <StringItem index="12" value="Coconut Cocktails[60]"/>
+                    <StringItem index="13" value="Coconut Fried Fish[60]"/>
+                    <StringItem index="14" value="Coconut Pasta[60]"/>
+                    <StringItem index="15" value="Couscous[110]"/>
+                    <StringItem index="16" value="Dark Pudding[90]"/>
+                    <StringItem index="17" value="Date Palms Wine[90]"/>
+                    <StringItem index="18" value="Desert Dumpling[30]"/>
+                    <StringItem index="19" value="Exotic Herbal Wine[30]"/>
+                    <StringItem index="20" value="Fig Pie[60]"/>
+                    <StringItem index="21" value="Fish Fillet Salad[60]"/>
+                    <StringItem index="22" value="Fish Soup[60]"/>
+                    <StringItem index="23" value="Fried Bird[60]"/>
+                    <StringItem index="24" value="Fried Vegetables[30]"/>
+                    <StringItem index="25" value="Fruit and Vegetable Salad[60]"/>
+                    <StringItem index="26" value="Fruit Juice[30]"/>
+                    <StringItem index="27" value="Fruit Pie[90]"/>
+                    <StringItem index="28" value="Fruit Pudding[30]"/>
+                    <StringItem index="29" value="Fruit Wine[60]"/>
+                    <StringItem index="30" value="Grain Soup[30]"/>
+                    <StringItem index="31" value="Grilled Sausage[30]"/>
+                    <StringItem index="32" value="Grilled Scorpion[90]"/>
+                    <StringItem index="33" value="Ham Sandwich[90]"/>
+                    <StringItem index="34" value="Honey Wine[60]"/>
+                    <StringItem index="35" value="Hunter&apos;s Salad[30]"/>
+                    <StringItem index="36" value="Healthy Sute Tea[110]"/>
+                    <StringItem index="37" value="Jungle Hamburger[110]"/>
+                    <StringItem index="38" value="Khalk&apos;s Fermented Wine[60]"/>
+                    <StringItem index="39" value="Knight Combat Rations[120]"/>
+                    <StringItem index="40" value="Lean Meat Salad[90]"/>
+                    <StringItem index="41" value="Lizard Kebab[30]"/>
+                    <StringItem index="42" value="Margoria Seafood Extravaganza[90]"/>
+                    <StringItem index="43" value="Meat Croquette[90]"/>
+                    <StringItem index="44" value="Meat Pasta[60]"/>
+                    <StringItem index="45" value="Meat Pie[60]"/>
+                    <StringItem index="46" value="Meat Sandwich[90]"/>
+                    <StringItem index="47" value="Meat Soup[30]"/>
+                    <StringItem index="48" value="Meat Stew[30]"/>
+                    <StringItem index="49" value="Mediah Special[90]"/>
+                    <StringItem index="50" value="Milk Tea[90]"/>
+                    <StringItem index="51" value="Omelet[60]"/>
+                    <StringItem index="52" value="Pickled Fish[60]"/>
+                    <StringItem index="53" value="Pickled Vegetables[60]"/>
+                    <StringItem index="54" value="Pistachio Rice[90]"/>
+                    <StringItem index="55" value="Prawn Salad[60]"/>
+                    <StringItem index="56" value="Seafood Grilled with Butter[30]"/>
+                    <StringItem index="57" value="Seafood Mushroom Salad[30]"/>
+                    <StringItem index="58" value="Seafood Pasta[60]"/>
+                    <StringItem index="59" value="Serendia Special[90]"/>
+                    <StringItem index="60" value="Smoked Fish Steak[60]"/>
+                    <StringItem index="61" value="Soft Bread[30]"/>
+                    <StringItem index="62" value="Steak[60]"/>
+                    <StringItem index="63" value="Steamed Bird[60]"/>
+                    <StringItem index="64" value="Steamed Fish[30]"/>
+                    <StringItem index="65" value="Steamed Prawn[60]"/>
+                    <StringItem index="66" value="Steamed Seafood[60]"/>
+                    <StringItem index="67" value="Steamed Whale Meat[75]"/>
+                    <StringItem index="68" value="Stir-fried Gazelle Hind Leg[60]"/>
+                    <StringItem index="69" value="Stir-Fried Meat[60]"/>
+                    <StringItem index="70" value="Stir-Fried Oyster[60]"/>
+                    <StringItem index="71" value="Stir-Fried Seafood[30]"/>
+                    <StringItem index="72" value="Stir-fried Vegetables[30]"/>
+                    <StringItem index="73" value="Sute Tea[90]"/>
+                    <StringItem index="74" value="Tea With Fine Scent[60]"/>
+                    <StringItem index="75" value="Teff Bread[110]"/>
+                    <StringItem index="76" value="Teff Sandwich[110]"/>
+                    <StringItem index="77" value="Valencian Special[120]"/>
+                    <StringItem index="78" value="Whale Meat Salad[75]"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbSecondFoodActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jSecondFoodIcon">
+              <Properties>
+                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[42, 42]"/>
+                </Property>
+                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[42, 42]"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Label" name="lSelect1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="2 - Click on the button to when you ate the food in the game."/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Label" name="lSelect2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="3 - The timer will start and will remaind you witch food is ending and when you can eat again"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jThirdFoodIcon">
+              <Properties>
+                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[42, 42]"/>
+                </Property>
+                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[42, 42]"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbThirdFood">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="79">
+                    <StringItem index="0" value="Test[5]"/>
+                    <StringItem index="1" value="Aloe Cookie[30]"/>
+                    <StringItem index="2" value="Aloe Yogurt[30]"/>
+                    <StringItem index="3" value="Arehaza Special[90]"/>
+                    <StringItem index="4" value="Assorted Side Dishes[90]"/>
+                    <StringItem index="5" value="Balenos Special[90]"/>
+                    <StringItem index="6" value="Beehive Cookie[90]"/>
+                    <StringItem index="7" value="Boiled Bird Eggs[30]"/>
+                    <StringItem index="8" value="Borscht[60]"/>
+                    <StringItem index="9" value="Butter-Roasted Lobster[60]"/>
+                    <StringItem index="10" value="Calpheon Special[90]"/>
+                    <StringItem index="11" value="Cheese Gratin[90]"/>
+                    <StringItem index="12" value="Coconut Cocktails[60]"/>
+                    <StringItem index="13" value="Coconut Fried Fish[60]"/>
+                    <StringItem index="14" value="Coconut Pasta[60]"/>
+                    <StringItem index="15" value="Couscous[110]"/>
+                    <StringItem index="16" value="Dark Pudding[90]"/>
+                    <StringItem index="17" value="Date Palms Wine[90]"/>
+                    <StringItem index="18" value="Desert Dumpling[30]"/>
+                    <StringItem index="19" value="Exotic Herbal Wine[30]"/>
+                    <StringItem index="20" value="Fig Pie[60]"/>
+                    <StringItem index="21" value="Fish Fillet Salad[60]"/>
+                    <StringItem index="22" value="Fish Soup[60]"/>
+                    <StringItem index="23" value="Fried Bird[60]"/>
+                    <StringItem index="24" value="Fried Vegetables[30]"/>
+                    <StringItem index="25" value="Fruit and Vegetable Salad[60]"/>
+                    <StringItem index="26" value="Fruit Juice[30]"/>
+                    <StringItem index="27" value="Fruit Pie[90]"/>
+                    <StringItem index="28" value="Fruit Pudding[30]"/>
+                    <StringItem index="29" value="Fruit Wine[60]"/>
+                    <StringItem index="30" value="Grain Soup[30]"/>
+                    <StringItem index="31" value="Grilled Sausage[30]"/>
+                    <StringItem index="32" value="Grilled Scorpion[90]"/>
+                    <StringItem index="33" value="Ham Sandwich[90]"/>
+                    <StringItem index="34" value="Honey Wine[60]"/>
+                    <StringItem index="35" value="Hunter&apos;s Salad[30]"/>
+                    <StringItem index="36" value="Healthy Sute Tea[110]"/>
+                    <StringItem index="37" value="Jungle Hamburger[110]"/>
+                    <StringItem index="38" value="Khalk&apos;s Fermented Wine[60]"/>
+                    <StringItem index="39" value="Knight Combat Rations[120]"/>
+                    <StringItem index="40" value="Lean Meat Salad[90]"/>
+                    <StringItem index="41" value="Lizard Kebab[30]"/>
+                    <StringItem index="42" value="Margoria Seafood Extravaganza[90]"/>
+                    <StringItem index="43" value="Meat Croquette[90]"/>
+                    <StringItem index="44" value="Meat Pasta[60]"/>
+                    <StringItem index="45" value="Meat Pie[60]"/>
+                    <StringItem index="46" value="Meat Sandwich[90]"/>
+                    <StringItem index="47" value="Meat Soup[30]"/>
+                    <StringItem index="48" value="Meat Stew[30]"/>
+                    <StringItem index="49" value="Mediah Special[90]"/>
+                    <StringItem index="50" value="Milk Tea[90]"/>
+                    <StringItem index="51" value="Omelet[60]"/>
+                    <StringItem index="52" value="Pickled Fish[60]"/>
+                    <StringItem index="53" value="Pickled Vegetables[60]"/>
+                    <StringItem index="54" value="Pistachio Rice[90]"/>
+                    <StringItem index="55" value="Prawn Salad[60]"/>
+                    <StringItem index="56" value="Seafood Grilled with Butter[30]"/>
+                    <StringItem index="57" value="Seafood Mushroom Salad[30]"/>
+                    <StringItem index="58" value="Seafood Pasta[60]"/>
+                    <StringItem index="59" value="Serendia Special[90]"/>
+                    <StringItem index="60" value="Smoked Fish Steak[60]"/>
+                    <StringItem index="61" value="Soft Bread[30]"/>
+                    <StringItem index="62" value="Steak[60]"/>
+                    <StringItem index="63" value="Steamed Bird[60]"/>
+                    <StringItem index="64" value="Steamed Fish[30]"/>
+                    <StringItem index="65" value="Steamed Prawn[60]"/>
+                    <StringItem index="66" value="Steamed Seafood[60]"/>
+                    <StringItem index="67" value="Steamed Whale Meat[75]"/>
+                    <StringItem index="68" value="Stir-fried Gazelle Hind Leg[60]"/>
+                    <StringItem index="69" value="Stir-Fried Meat[60]"/>
+                    <StringItem index="70" value="Stir-Fried Oyster[60]"/>
+                    <StringItem index="71" value="Stir-Fried Seafood[30]"/>
+                    <StringItem index="72" value="Stir-fried Vegetables[30]"/>
+                    <StringItem index="73" value="Sute Tea[90]"/>
+                    <StringItem index="74" value="Tea With Fine Scent[60]"/>
+                    <StringItem index="75" value="Teff Bread[110]"/>
+                    <StringItem index="76" value="Teff Sandwich[110]"/>
+                    <StringItem index="77" value="Valencian Special[120]"/>
+                    <StringItem index="78" value="Whale Meat Salad[75]"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbThirdFoodActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfThirdFoodClock">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Grande" size="14" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="00:00:00"/>
+                <Property name="enabled" type="boolean" value="false"/>
+                <Property name="name" type="java.lang.String" value="firstFoodClock" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfThirdFoodClockActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="java.awt.Button" name="bStopAll1">
+              <Properties>
+                <Property name="actionCommand" type="java.lang.String" value="n"/>
+                <Property name="label" type="java.lang.String" value="Ate the food"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bStopAll1ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="java.awt.Label" name="label2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="4 - If you want to stop all the food, just click &quot;Stop All&quot;."/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Label" name="label3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="5 - The timer next to &quot;Stop All&quot; Is the Cooldown to use another food."/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Button" name="bStopAll">
+              <Properties>
+                <Property name="actionCommand" type="java.lang.String" value="n"/>
+                <Property name="label" type="java.lang.String" value="Stop All"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bStopAllActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfCdClock">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Grande" size="14" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="00:00:00"/>
+                <Property name="enabled" type="boolean" value="false"/>
+                <Property name="name" type="java.lang.String" value="firstFoodClock" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfCdClockActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jStopWatchPanel">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="StopWatch"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lHowTo1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="200" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lHowTo1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="370" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="java.awt.Label" name="lHowTo1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="1 - Select when the program should remind you that the timer is over."/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jOgrePanel">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="OgrePanel"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="label1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="518" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="label1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="370" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="java.awt.Label" name="label1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Text to see if its ok"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanelMenu">
@@ -449,11 +719,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Food"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Stopwatch"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
