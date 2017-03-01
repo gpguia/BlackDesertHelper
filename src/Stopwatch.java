@@ -15,6 +15,7 @@ import javax.swing.JTextField;
  */
 public class Stopwatch {
     JTextField upField;
+    int flag;
     initClock clock = new initClock(0,0,0);
     Timer runTime = new Timer();
     TimerTask task = new TimerTask(){
@@ -27,11 +28,10 @@ public class Stopwatch {
                 clock.m=0;
             }
             clock.s++;
-            System.out.println(clock.s);
             upField.setText(clock.h + ":" + clock.m + ":" + clock.s);
         }
     };
-    
+     
     public Stopwatch(JTextField field){
         upField = field;
     }

@@ -8,23 +8,29 @@
  *
  * @author guilhermeguia
  */
+
 import java.awt.CardLayout;
 import javax.swing.ImageIcon;
-import java.util.Calendar;
-import java.text.SimpleDateFormat;
+//import java.util.Calendar;
+//import java.text.SimpleDateFormat;
 import java.util.Timer;
 import java.util.TimerTask;
-import static javafx.scene.input.KeyCode.R;
-import javax.swing.JTextField;
+//import static javafx.scene.input.KeyCode.R;
+//import javax.swing.JTextField;
 
 public class principalForm extends javax.swing.JFrame {
 
     /**
      * Creates new form principalForm
      */
-    
     public static int flagStopAll = 0;
     public static int flagCdTimerRunning = 0;
+    public static Stopwatch clock1;
+    public static Stopwatch clock2;
+    public static Stopwatch clock3;
+    public static Stopwatch clock4;
+    public static Stopwatch clock5;
+    public static Stopwatch clock6;
     public principalForm() {
         initComponents();
         lRemainder.setVisible(false);
@@ -33,7 +39,6 @@ public class principalForm extends javax.swing.JFrame {
         jSecondFoodIcon.setIcon(icon);
         jThirdFoodIcon.setIcon(icon);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -122,7 +127,6 @@ public class principalForm extends javax.swing.JFrame {
         tfFirstFoodClock.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         tfFirstFoodClock.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfFirstFoodClock.setText("00:00:00");
-        tfFirstFoodClock.setEnabled(false);
         tfFirstFoodClock.setName("firstFoodClock"); // NOI18N
         tfFirstFoodClock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,7 +154,6 @@ public class principalForm extends javax.swing.JFrame {
         tfSecondFoodClock.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         tfSecondFoodClock.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfSecondFoodClock.setText("00:00:00");
-        tfSecondFoodClock.setEnabled(false);
         tfSecondFoodClock.setName("firstFoodClock"); // NOI18N
         tfSecondFoodClock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,7 +189,6 @@ public class principalForm extends javax.swing.JFrame {
         tfThirdFoodClock.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         tfThirdFoodClock.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfThirdFoodClock.setText("00:00:00");
-        tfThirdFoodClock.setEnabled(false);
         tfThirdFoodClock.setName("firstFoodClock"); // NOI18N
         tfThirdFoodClock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,7 +220,6 @@ public class principalForm extends javax.swing.JFrame {
         tfCdClock.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         tfCdClock.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfCdClock.setText("00:00:00");
-        tfCdClock.setEnabled(false);
         tfCdClock.setName("firstFoodClock"); // NOI18N
         tfCdClock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -329,7 +330,6 @@ public class principalForm extends javax.swing.JFrame {
         tfStopwatch1.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         tfStopwatch1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfStopwatch1.setText("00:00:00");
-        tfStopwatch1.setEnabled(false);
         tfStopwatch1.setName("firstFoodClock"); // NOI18N
         tfStopwatch1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -341,7 +341,6 @@ public class principalForm extends javax.swing.JFrame {
         tfStopwatch2.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         tfStopwatch2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfStopwatch2.setText("00:00:00");
-        tfStopwatch2.setEnabled(false);
         tfStopwatch2.setName("firstFoodClock"); // NOI18N
         tfStopwatch2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -353,7 +352,6 @@ public class principalForm extends javax.swing.JFrame {
         tfStopwatch3.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         tfStopwatch3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfStopwatch3.setText("00:00:00");
-        tfStopwatch3.setEnabled(false);
         tfStopwatch3.setName("firstFoodClock"); // NOI18N
         tfStopwatch3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -365,7 +363,6 @@ public class principalForm extends javax.swing.JFrame {
         tfStopwatch4.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         tfStopwatch4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfStopwatch4.setText("00:00:00");
-        tfStopwatch4.setEnabled(false);
         tfStopwatch4.setName("firstFoodClock"); // NOI18N
         tfStopwatch4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -377,7 +374,6 @@ public class principalForm extends javax.swing.JFrame {
         tfStopwatch5.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         tfStopwatch5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfStopwatch5.setText("00:00:00");
-        tfStopwatch5.setEnabled(false);
         tfStopwatch5.setName("firstFoodClock"); // NOI18N
         tfStopwatch5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -393,38 +389,107 @@ public class principalForm extends javax.swing.JFrame {
         });
 
         bStop1.setText("Stop");
+        bStop1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bStop1ActionPerformed(evt);
+            }
+        });
 
         bRestart1.setText("Restart");
+        bRestart1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bRestart1ActionPerformed(evt);
+            }
+        });
 
         bStart2.setText("Start");
+        bStart2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bStart2ActionPerformed(evt);
+            }
+        });
 
         bStop2.setText("Stop");
+        bStop2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bStop2ActionPerformed(evt);
+            }
+        });
 
         bRestart2.setText("Restart");
+        bRestart2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bRestart2ActionPerformed(evt);
+            }
+        });
 
         bStart3.setText("Start");
+        bStart3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bStart3ActionPerformed(evt);
+            }
+        });
 
         bStop3.setText("Stop");
+        bStop3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bStop3ActionPerformed(evt);
+            }
+        });
 
         bRestart3.setText("Restart");
+        bRestart3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bRestart3ActionPerformed(evt);
+            }
+        });
 
         bStart4.setText("Start");
+        bStart4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bStart4ActionPerformed(evt);
+            }
+        });
 
         bStop4.setText("Stop");
+        bStop4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bStop4ActionPerformed(evt);
+            }
+        });
 
         bRestart4.setText("Restart");
+        bRestart4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bRestart4ActionPerformed(evt);
+            }
+        });
 
         bStart5.setText("Start");
+        bStart5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bStart5ActionPerformed(evt);
+            }
+        });
 
         bStop5.setText("Stop");
+        bStop5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bStop5ActionPerformed(evt);
+            }
+        });
 
         bRestart5.setText("Restart");
+        bRestart5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bRestart5ActionPerformed(evt);
+            }
+        });
 
         tfStopwatch6.setEditable(false);
         tfStopwatch6.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         tfStopwatch6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfStopwatch6.setText("00:00:00");
-        tfStopwatch6.setEnabled(false);
         tfStopwatch6.setName("firstFoodClock"); // NOI18N
         tfStopwatch6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -433,10 +498,25 @@ public class principalForm extends javax.swing.JFrame {
         });
 
         bStart6.setText("Start");
+        bStart6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bStart6ActionPerformed(evt);
+            }
+        });
 
         bStop6.setText("Stop");
+        bStop6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bStop6ActionPerformed(evt);
+            }
+        });
 
         bRestart6.setText("Restart");
+        bRestart6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bRestart6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jStopWatchPanelLayout = new javax.swing.GroupLayout(jStopWatchPanel);
         jStopWatchPanel.setLayout(jStopWatchPanelLayout);
@@ -541,7 +621,7 @@ public class principalForm extends javax.swing.JFrame {
 
         jMainPanel.add(jStopWatchPanel, "StopWatch");
 
-        label1.setText("Text to see if its ok");
+        label1.setText("Under Construction");
 
         javax.swing.GroupLayout jOgrePanelLayout = new javax.swing.GroupLayout(jOgrePanel);
         jOgrePanel.setLayout(jOgrePanelLayout);
@@ -675,10 +755,14 @@ public class principalForm extends javax.swing.JFrame {
                 }else if(tSFood.m == 0 && tSFood.h >= 1){
                     tSFood.m=60;
                     tSFood.h--;
+                }else if(tSFood.m == 60){
+                    tSFood.m--;
+                    tSFood.s=60;
                 }
                 
                 tSFood.s--;
                 
+                tfCdClock.setText("00:" + cdClock.clock.m + ":" + cdClock.clock.s);
                 tfThirdFoodClock.setText(tSFood.h + ":" + tSFood.m + ":" + tSFood.s);
                 if(tSFood.h == 0 && tSFood.m == 0 && tSFood.s == 0 || flagStopAll == 1){
                     updateText.cancel();
@@ -747,9 +831,12 @@ public class principalForm extends javax.swing.JFrame {
         String labelRemainder = "You should eat ";
         //Get The food name.
         String SecondFoodName = cbSecondFood.getSelectedItem().toString();
+        /*
+        Set label, must code it...
         labelRemainder = labelRemainder + SecondFoodName;
-        lRemainder.setText(labelRemainder);
+        /lRemainder.setText(labelRemainder);
         lRemainder.setVisible(true);
+        */
         time = SecondFoodName;
         time = time.substring(time.indexOf("[") + 1);
         time = time.substring(0, time.indexOf("]"));
@@ -774,6 +861,9 @@ public class principalForm extends javax.swing.JFrame {
                 }else if(tSFood.m == 0 && tSFood.h >= 1){
                     tSFood.m=60;
                     tSFood.h--;
+                }else if(tSFood.m == 60){
+                    tSFood.m--;
+                    tSFood.s=60;
                 }
                 tSFood.s--;
                 tfCdClock.setText("00:" + cdClock.clock.m + ":" + cdClock.clock.s);
@@ -801,9 +891,12 @@ public class principalForm extends javax.swing.JFrame {
         String labelRemainder = "You should eat ";
         //Get The food name.
         String firstFoodName = cbFirstFood.getSelectedItem().toString();
-        labelRemainder = labelRemainder + firstFoodName;
-        lRemainder.setText(labelRemainder);
+        /*
+        Set label, must code it...
+        labelRemainder = labelRemainder + SecondFoodName;
+        /lRemainder.setText(labelRemainder);
         lRemainder.setVisible(true);
+        */
         time = firstFoodName;
         time = time.substring(time.indexOf("[") + 1);
         time = time.substring(0, time.indexOf("]"));
@@ -829,6 +922,9 @@ public class principalForm extends javax.swing.JFrame {
                 }else if(tSFood.m == 0 && tSFood.h >= 1){
                     tSFood.m=60;
                     tSFood.h--;
+                }else if(tSFood.m == 60){
+                    tSFood.m--;
+                    tSFood.s=60;
                 }
                 tSFood.s--;
                 tfCdClock.setText("00:" + cdClock.clock.m + ":" + cdClock.clock.s);
@@ -913,9 +1009,88 @@ public class principalForm extends javax.swing.JFrame {
     }//GEN-LAST:event_tfStopwatch6ActionPerformed
 
     private void bStart1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStart1ActionPerformed
-        Stopwatch clock = new Stopwatch(tfStopwatch1);
-        clock.runTime.scheduleAtFixedRate(clock.task, 1000, 1000);
+        clock1 = new Stopwatch(tfStopwatch1);
+        clock1.runTime.scheduleAtFixedRate(clock1.task, 1000, 1000);
     }//GEN-LAST:event_bStart1ActionPerformed
+
+    private void bStop1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStop1ActionPerformed
+        clock1.runTime.cancel();
+    }//GEN-LAST:event_bStop1ActionPerformed
+
+    private void bRestart1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRestart1ActionPerformed
+        clock1.runTime.cancel();
+        clock1.upField.setText("00:00:00");
+    }//GEN-LAST:event_bRestart1ActionPerformed
+
+    private void bStart2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStart2ActionPerformed
+        clock2 = new Stopwatch(tfStopwatch2);
+        clock2.runTime.scheduleAtFixedRate(clock2.task, 1000, 1000);
+    }//GEN-LAST:event_bStart2ActionPerformed
+
+    private void bStart3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStart3ActionPerformed
+        clock3 = new Stopwatch(tfStopwatch3);
+        clock3.runTime.scheduleAtFixedRate(clock3.task, 1000, 1000);
+    }//GEN-LAST:event_bStart3ActionPerformed
+
+    private void bStart4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStart4ActionPerformed
+        clock4 = new Stopwatch(tfStopwatch4);
+        clock4.runTime.scheduleAtFixedRate(clock4.task, 1000, 1000);
+    }//GEN-LAST:event_bStart4ActionPerformed
+
+    private void bStart5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStart5ActionPerformed
+        clock5 = new Stopwatch(tfStopwatch5);
+        clock5.runTime.scheduleAtFixedRate(clock5.task, 1000, 1000);
+    }//GEN-LAST:event_bStart5ActionPerformed
+
+    private void bStart6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStart6ActionPerformed
+        clock6 = new Stopwatch(tfStopwatch6);
+        clock6.runTime.scheduleAtFixedRate(clock6.task, 1000, 1000);
+    }//GEN-LAST:event_bStart6ActionPerformed
+
+    private void bStop2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStop2ActionPerformed
+        clock2.runTime.cancel();
+    }//GEN-LAST:event_bStop2ActionPerformed
+
+    private void bStop3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStop3ActionPerformed
+        clock3.runTime.cancel();
+    }//GEN-LAST:event_bStop3ActionPerformed
+
+    private void bStop4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStop4ActionPerformed
+        clock4.runTime.cancel();
+    }//GEN-LAST:event_bStop4ActionPerformed
+
+    private void bStop5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStop5ActionPerformed
+        clock5.runTime.cancel();
+    }//GEN-LAST:event_bStop5ActionPerformed
+
+    private void bStop6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStop6ActionPerformed
+        clock6.runTime.cancel();
+    }//GEN-LAST:event_bStop6ActionPerformed
+
+    private void bRestart2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRestart2ActionPerformed
+        clock2.runTime.cancel();
+        clock2.upField.setText("00:00:00");
+    }//GEN-LAST:event_bRestart2ActionPerformed
+
+    private void bRestart3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRestart3ActionPerformed
+        clock3.runTime.cancel();
+        clock3.upField.setText("00:00:00");
+    }//GEN-LAST:event_bRestart3ActionPerformed
+
+    private void bRestart4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRestart4ActionPerformed
+        clock4.runTime.cancel();
+        clock4.upField.setText("00:00:00");
+    }//GEN-LAST:event_bRestart4ActionPerformed
+
+    private void bRestart5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRestart5ActionPerformed
+        clock5.runTime.cancel();
+        clock5.upField.setText("00:00:00");
+    }//GEN-LAST:event_bRestart5ActionPerformed
+
+    private void bRestart6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRestart6ActionPerformed
+        clock6.runTime.cancel();
+        clock6.upField.setText("00:00:00");
+    }//GEN-LAST:event_bRestart6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -943,7 +1118,7 @@ public class principalForm extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(principalForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
