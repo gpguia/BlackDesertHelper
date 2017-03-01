@@ -12,26 +12,23 @@ import java.util.TimerTask;
  * @author guilhermeguia
  */
 public class cdTimer {
-    int h;
-    int m;
-    int s;
-    
+    initClock clock = new initClock(0,30,0);
     Timer cdTimer = new Timer();
-    
-        /*cdClock.schedule(new TimerTask() {
-            @Override public void run() {
+    TimerTask task = new TimerTask(){
+        public void run(){
+            if(clock.s == 0 && clock.m >= 1){
+                    clock.m--;
+                    clock.s=60;
+                }else if(clock.m == 0 && clock.h >= 1){
+                    clock.m=60;
+                    clock.h--;
+                }
                 
-            }
-        }, 10, 10);
-    */
-    
-    
-    // Constructor
-    public cdTimer(){
-        h = 0;
-        m = 30;
-        s = 0;
-    }
-    
-    
+                if(clock.s == 0 && clock.m >=1){
+                    clock.m--;
+                    clock.s = 60;
+                }
+                clock.s--;
+        }
+    };
 }

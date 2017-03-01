@@ -14,13 +14,17 @@ import java.util.Calendar;
 import java.text.SimpleDateFormat;
 import java.util.Timer;
 import java.util.TimerTask;
+import static javafx.scene.input.KeyCode.R;
+import javax.swing.JTextField;
 
 public class principalForm extends javax.swing.JFrame {
 
     /**
      * Creates new form principalForm
      */
+    
     public static int flagStopAll = 0;
+    public static int flagCdTimerRunning = 0;
     public principalForm() {
         initComponents();
         lRemainder.setVisible(false);
@@ -63,12 +67,36 @@ public class principalForm extends javax.swing.JFrame {
         tfCdClock = new javax.swing.JTextField();
         jStopWatchPanel = new javax.swing.JPanel();
         lHowTo1 = new java.awt.Label();
+        tfStopwatch1 = new javax.swing.JTextField();
+        tfStopwatch2 = new javax.swing.JTextField();
+        tfStopwatch3 = new javax.swing.JTextField();
+        tfStopwatch4 = new javax.swing.JTextField();
+        tfStopwatch5 = new javax.swing.JTextField();
+        bStart1 = new javax.swing.JButton();
+        bStop1 = new javax.swing.JButton();
+        bRestart1 = new javax.swing.JButton();
+        bStart2 = new javax.swing.JButton();
+        bStop2 = new javax.swing.JButton();
+        bRestart2 = new javax.swing.JButton();
+        bStart3 = new javax.swing.JButton();
+        bStop3 = new javax.swing.JButton();
+        bRestart3 = new javax.swing.JButton();
+        bStart4 = new javax.swing.JButton();
+        bStop4 = new javax.swing.JButton();
+        bRestart4 = new javax.swing.JButton();
+        bStart5 = new javax.swing.JButton();
+        bStop5 = new javax.swing.JButton();
+        bRestart5 = new javax.swing.JButton();
+        tfStopwatch6 = new javax.swing.JTextField();
+        bStart6 = new javax.swing.JButton();
+        bStop6 = new javax.swing.JButton();
+        bRestart6 = new javax.swing.JButton();
         jOgrePanel = new javax.swing.JPanel();
         label1 = new java.awt.Label();
         jPanelMenu = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        bFood = new javax.swing.JButton();
+        bStopwatch = new javax.swing.JButton();
+        bOgre = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -130,7 +158,7 @@ public class principalForm extends javax.swing.JFrame {
             }
         });
 
-        cbSecondFood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Test[5]", "Aloe Cookie[30]", "Aloe Yogurt[30]", "Arehaza Special[90]", "Assorted Side Dishes[90]", "Balenos Special[90]", "Beehive Cookie[90]", "Boiled Bird Eggs[30]", "Borscht[60]", "Butter-Roasted Lobster[60]", "Calpheon Special[90]", "Cheese Gratin[90]", "Coconut Cocktails[60]", "Coconut Fried Fish[60]", "Coconut Pasta[60]", "Couscous[110]", "Dark Pudding[90]", "Date Palms Wine[90]", "Desert Dumpling[30]", "Exotic Herbal Wine[30]", "Fig Pie[60]", "Fish Fillet Salad[60]", "Fish Soup[60]", "Fried Bird[60]", "Fried Vegetables[30]", "Fruit and Vegetable Salad[60]", "Fruit Juice[30]", "Fruit Pie[90]", "Fruit Pudding[30]", "Fruit Wine[60]", "Grain Soup[30]", "Grilled Sausage[30]", "Grilled Scorpion[90]", "Ham Sandwich[90]", "Honey Wine[60]", "Hunter's Salad[30]", "Healthy Sute Tea[110]", "Jungle Hamburger[110]", "Khalk's Fermented Wine[60]", "Knight Combat Rations[120]", "Lean Meat Salad[90]", "Lizard Kebab[30]", "Margoria Seafood Extravaganza[90]", "Meat Croquette[90]", "Meat Pasta[60]", "Meat Pie[60]", "Meat Sandwich[90]", "Meat Soup[30]", "Meat Stew[30]", "Mediah Special[90]", "Milk Tea[90]", "Omelet[60]", "Pickled Fish[60]", "Pickled Vegetables[60]", "Pistachio Rice[90]", "Prawn Salad[60]", "Seafood Grilled with Butter[30]", "Seafood Mushroom Salad[30]", "Seafood Pasta[60]", "Serendia Special[90]", "Smoked Fish Steak[60]", "Soft Bread[30]", "Steak[60]", "Steamed Bird[60]", "Steamed Fish[30]", "Steamed Prawn[60]", "Steamed Seafood[60]", "Steamed Whale Meat[75]", "Stir-fried Gazelle Hind Leg[60]", "Stir-Fried Meat[60]", "Stir-Fried Oyster[60]", "Stir-Fried Seafood[30]", "Stir-fried Vegetables[30]", "Sute Tea[90]", "Tea With Fine Scent[60]", "Teff Bread[110]", "Teff Sandwich[110]", "Valencian Special[120]", "Whale Meat Salad[75]" }));
+        cbSecondFood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aloe Cookie[30]", "Aloe Yogurt[30]", "Arehaza Special[90]", "Assorted Side Dishes[90]", "Balenos Special[90]", "Beehive Cookie[90]", "Boiled Bird Eggs[30]", "Borscht[60]", "Butter-Roasted Lobster[60]", "Calpheon Special[90]", "Cheese Gratin[90]", "Coconut Cocktails[60]", "Coconut Fried Fish[60]", "Coconut Pasta[60]", "Couscous[110]", "Dark Pudding[90]", "Date Palms Wine[90]", "Desert Dumpling[30]", "Exotic Herbal Wine[30]", "Fig Pie[60]", "Fish Fillet Salad[60]", "Fish Soup[60]", "Fried Bird[60]", "Fried Vegetables[30]", "Fruit and Vegetable Salad[60]", "Fruit Juice[30]", "Fruit Pie[90]", "Fruit Pudding[30]", "Fruit Wine[60]", "Grain Soup[30]", "Grilled Sausage[30]", "Grilled Scorpion[90]", "Ham Sandwich[90]", "Honey Wine[60]", "Hunter's Salad[30]", "Healthy Sute Tea[110]", "Jungle Hamburger[110]", "Khalk's Fermented Wine[60]", "Knight Combat Rations[120]", "Lean Meat Salad[90]", "Lizard Kebab[30]", "Margoria Seafood Extravaganza[90]", "Meat Croquette[90]", "Meat Pasta[60]", "Meat Pie[60]", "Meat Sandwich[90]", "Meat Soup[30]", "Meat Stew[30]", "Mediah Special[90]", "Milk Tea[90]", "Omelet[60]", "Pickled Fish[60]", "Pickled Vegetables[60]", "Pistachio Rice[90]", "Prawn Salad[60]", "Seafood Grilled with Butter[30]", "Seafood Mushroom Salad[30]", "Seafood Pasta[60]", "Serendia Special[90]", "Smoked Fish Steak[60]", "Soft Bread[30]", "Steak[60]", "Steamed Bird[60]", "Steamed Fish[30]", "Steamed Prawn[60]", "Steamed Seafood[60]", "Steamed Whale Meat[75]", "Stir-fried Gazelle Hind Leg[60]", "Stir-Fried Meat[60]", "Stir-Fried Oyster[60]", "Stir-Fried Seafood[30]", "Stir-fried Vegetables[30]", "Sute Tea[90]", "Tea With Fine Scent[60]", "Teff Bread[110]", "Teff Sandwich[110]", "Valencian Special[120]", "Whale Meat Salad[75]" }));
         cbSecondFood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbSecondFoodActionPerformed(evt);
@@ -147,7 +175,7 @@ public class principalForm extends javax.swing.JFrame {
         jThirdFoodIcon.setMaximumSize(new java.awt.Dimension(42, 42));
         jThirdFoodIcon.setMinimumSize(new java.awt.Dimension(42, 42));
 
-        cbThirdFood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Test[5]", "Aloe Cookie[30]", "Aloe Yogurt[30]", "Arehaza Special[90]", "Assorted Side Dishes[90]", "Balenos Special[90]", "Beehive Cookie[90]", "Boiled Bird Eggs[30]", "Borscht[60]", "Butter-Roasted Lobster[60]", "Calpheon Special[90]", "Cheese Gratin[90]", "Coconut Cocktails[60]", "Coconut Fried Fish[60]", "Coconut Pasta[60]", "Couscous[110]", "Dark Pudding[90]", "Date Palms Wine[90]", "Desert Dumpling[30]", "Exotic Herbal Wine[30]", "Fig Pie[60]", "Fish Fillet Salad[60]", "Fish Soup[60]", "Fried Bird[60]", "Fried Vegetables[30]", "Fruit and Vegetable Salad[60]", "Fruit Juice[30]", "Fruit Pie[90]", "Fruit Pudding[30]", "Fruit Wine[60]", "Grain Soup[30]", "Grilled Sausage[30]", "Grilled Scorpion[90]", "Ham Sandwich[90]", "Honey Wine[60]", "Hunter's Salad[30]", "Healthy Sute Tea[110]", "Jungle Hamburger[110]", "Khalk's Fermented Wine[60]", "Knight Combat Rations[120]", "Lean Meat Salad[90]", "Lizard Kebab[30]", "Margoria Seafood Extravaganza[90]", "Meat Croquette[90]", "Meat Pasta[60]", "Meat Pie[60]", "Meat Sandwich[90]", "Meat Soup[30]", "Meat Stew[30]", "Mediah Special[90]", "Milk Tea[90]", "Omelet[60]", "Pickled Fish[60]", "Pickled Vegetables[60]", "Pistachio Rice[90]", "Prawn Salad[60]", "Seafood Grilled with Butter[30]", "Seafood Mushroom Salad[30]", "Seafood Pasta[60]", "Serendia Special[90]", "Smoked Fish Steak[60]", "Soft Bread[30]", "Steak[60]", "Steamed Bird[60]", "Steamed Fish[30]", "Steamed Prawn[60]", "Steamed Seafood[60]", "Steamed Whale Meat[75]", "Stir-fried Gazelle Hind Leg[60]", "Stir-Fried Meat[60]", "Stir-Fried Oyster[60]", "Stir-Fried Seafood[30]", "Stir-fried Vegetables[30]", "Sute Tea[90]", "Tea With Fine Scent[60]", "Teff Bread[110]", "Teff Sandwich[110]", "Valencian Special[120]", "Whale Meat Salad[75]" }));
+        cbThirdFood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aloe Cookie[30]", "Aloe Yogurt[30]", "Arehaza Special[90]", "Assorted Side Dishes[90]", "Balenos Special[90]", "Beehive Cookie[90]", "Boiled Bird Eggs[30]", "Borscht[60]", "Butter-Roasted Lobster[60]", "Calpheon Special[90]", "Cheese Gratin[90]", "Coconut Cocktails[60]", "Coconut Fried Fish[60]", "Coconut Pasta[60]", "Couscous[110]", "Dark Pudding[90]", "Date Palms Wine[90]", "Desert Dumpling[30]", "Exotic Herbal Wine[30]", "Fig Pie[60]", "Fish Fillet Salad[60]", "Fish Soup[60]", "Fried Bird[60]", "Fried Vegetables[30]", "Fruit and Vegetable Salad[60]", "Fruit Juice[30]", "Fruit Pie[90]", "Fruit Pudding[30]", "Fruit Wine[60]", "Grain Soup[30]", "Grilled Sausage[30]", "Grilled Scorpion[90]", "Ham Sandwich[90]", "Honey Wine[60]", "Hunter's Salad[30]", "Healthy Sute Tea[110]", "Jungle Hamburger[110]", "Khalk's Fermented Wine[60]", "Knight Combat Rations[120]", "Lean Meat Salad[90]", "Lizard Kebab[30]", "Margoria Seafood Extravaganza[90]", "Meat Croquette[90]", "Meat Pasta[60]", "Meat Pie[60]", "Meat Sandwich[90]", "Meat Soup[30]", "Meat Stew[30]", "Mediah Special[90]", "Milk Tea[90]", "Omelet[60]", "Pickled Fish[60]", "Pickled Vegetables[60]", "Pistachio Rice[90]", "Prawn Salad[60]", "Seafood Grilled with Butter[30]", "Seafood Mushroom Salad[30]", "Seafood Pasta[60]", "Serendia Special[90]", "Smoked Fish Steak[60]", "Soft Bread[30]", "Steak[60]", "Steamed Bird[60]", "Steamed Fish[30]", "Steamed Prawn[60]", "Steamed Seafood[60]", "Steamed Whale Meat[75]", "Stir-fried Gazelle Hind Leg[60]", "Stir-Fried Meat[60]", "Stir-Fried Oyster[60]", "Stir-Fried Seafood[30]", "Stir-fried Vegetables[30]", "Sute Tea[90]", "Tea With Fine Scent[60]", "Teff Bread[110]", "Teff Sandwich[110]", "Valencian Special[120]", "Whale Meat Salad[75]" }));
         cbThirdFood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbThirdFoodActionPerformed(evt);
@@ -297,21 +325,218 @@ public class principalForm extends javax.swing.JFrame {
 
         lHowTo1.setText("1 - Select when the program should remind you that the timer is over.");
 
+        tfStopwatch1.setEditable(false);
+        tfStopwatch1.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        tfStopwatch1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfStopwatch1.setText("00:00:00");
+        tfStopwatch1.setEnabled(false);
+        tfStopwatch1.setName("firstFoodClock"); // NOI18N
+        tfStopwatch1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfStopwatch1ActionPerformed(evt);
+            }
+        });
+
+        tfStopwatch2.setEditable(false);
+        tfStopwatch2.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        tfStopwatch2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfStopwatch2.setText("00:00:00");
+        tfStopwatch2.setEnabled(false);
+        tfStopwatch2.setName("firstFoodClock"); // NOI18N
+        tfStopwatch2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfStopwatch2ActionPerformed(evt);
+            }
+        });
+
+        tfStopwatch3.setEditable(false);
+        tfStopwatch3.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        tfStopwatch3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfStopwatch3.setText("00:00:00");
+        tfStopwatch3.setEnabled(false);
+        tfStopwatch3.setName("firstFoodClock"); // NOI18N
+        tfStopwatch3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfStopwatch3ActionPerformed(evt);
+            }
+        });
+
+        tfStopwatch4.setEditable(false);
+        tfStopwatch4.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        tfStopwatch4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfStopwatch4.setText("00:00:00");
+        tfStopwatch4.setEnabled(false);
+        tfStopwatch4.setName("firstFoodClock"); // NOI18N
+        tfStopwatch4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfStopwatch4ActionPerformed(evt);
+            }
+        });
+
+        tfStopwatch5.setEditable(false);
+        tfStopwatch5.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        tfStopwatch5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfStopwatch5.setText("00:00:00");
+        tfStopwatch5.setEnabled(false);
+        tfStopwatch5.setName("firstFoodClock"); // NOI18N
+        tfStopwatch5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfStopwatch5ActionPerformed(evt);
+            }
+        });
+
+        bStart1.setText("Start");
+        bStart1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bStart1ActionPerformed(evt);
+            }
+        });
+
+        bStop1.setText("Stop");
+
+        bRestart1.setText("Restart");
+
+        bStart2.setText("Start");
+
+        bStop2.setText("Stop");
+
+        bRestart2.setText("Restart");
+
+        bStart3.setText("Start");
+
+        bStop3.setText("Stop");
+
+        bRestart3.setText("Restart");
+
+        bStart4.setText("Start");
+
+        bStop4.setText("Stop");
+
+        bRestart4.setText("Restart");
+
+        bStart5.setText("Start");
+
+        bStop5.setText("Stop");
+
+        bRestart5.setText("Restart");
+
+        tfStopwatch6.setEditable(false);
+        tfStopwatch6.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        tfStopwatch6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfStopwatch6.setText("00:00:00");
+        tfStopwatch6.setEnabled(false);
+        tfStopwatch6.setName("firstFoodClock"); // NOI18N
+        tfStopwatch6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfStopwatch6ActionPerformed(evt);
+            }
+        });
+
+        bStart6.setText("Start");
+
+        bStop6.setText("Stop");
+
+        bRestart6.setText("Restart");
+
         javax.swing.GroupLayout jStopWatchPanelLayout = new javax.swing.GroupLayout(jStopWatchPanel);
         jStopWatchPanel.setLayout(jStopWatchPanelLayout);
         jStopWatchPanelLayout.setHorizontalGroup(
             jStopWatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jStopWatchPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lHowTo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(200, Short.MAX_VALUE))
+                .addGroup(jStopWatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lHowTo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jStopWatchPanelLayout.createSequentialGroup()
+                        .addGroup(jStopWatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfStopwatch1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfStopwatch2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfStopwatch3, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfStopwatch4, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfStopwatch5, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfStopwatch6, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33)
+                        .addGroup(jStopWatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jStopWatchPanelLayout.createSequentialGroup()
+                                .addComponent(bStart5, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(bStop5, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(bRestart5, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jStopWatchPanelLayout.createSequentialGroup()
+                                .addComponent(bStart4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(bStop4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(bRestart4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jStopWatchPanelLayout.createSequentialGroup()
+                                .addComponent(bStart3, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(bStop3, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(bRestart3, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jStopWatchPanelLayout.createSequentialGroup()
+                                .addComponent(bStart2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(bStop2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(bRestart2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jStopWatchPanelLayout.createSequentialGroup()
+                                .addComponent(bStart1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(bStop1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(bRestart1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jStopWatchPanelLayout.createSequentialGroup()
+                                .addComponent(bStart6, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(bStop6, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(bRestart6, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         jStopWatchPanelLayout.setVerticalGroup(
             jStopWatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jStopWatchPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lHowTo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(370, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addGroup(jStopWatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfStopwatch1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bStart1)
+                    .addComponent(bStop1)
+                    .addComponent(bRestart1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jStopWatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfStopwatch2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bStart2)
+                    .addComponent(bStop2)
+                    .addComponent(bRestart2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jStopWatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfStopwatch3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bStart3)
+                    .addComponent(bStop3)
+                    .addComponent(bRestart3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jStopWatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfStopwatch4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bStart4)
+                    .addComponent(bStop4)
+                    .addComponent(bRestart4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jStopWatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfStopwatch5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bStart5)
+                    .addComponent(bStop5)
+                    .addComponent(bRestart5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jStopWatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfStopwatch6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jStopWatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(bStart6)
+                        .addComponent(bStop6)
+                        .addComponent(bRestart6)))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         jMainPanel.add(jStopWatchPanel, "StopWatch");
@@ -332,26 +557,31 @@ public class principalForm extends javax.swing.JFrame {
             .addGroup(jOgrePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(370, Short.MAX_VALUE))
+                .addContainerGap(379, Short.MAX_VALUE))
         );
 
         jMainPanel.add(jOgrePanel, "OgrePanel");
 
-        jButton1.setText("Food");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        bFood.setText("Food");
+        bFood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                bFoodActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Stopwatch");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        bStopwatch.setText("Stopwatch");
+        bStopwatch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                bStopwatchActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Ogre ");
+        bOgre.setText("Ogre ");
+        bOgre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bOgreActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelMenuLayout = new javax.swing.GroupLayout(jPanelMenu);
         jPanelMenu.setLayout(jPanelMenuLayout);
@@ -359,20 +589,20 @@ public class principalForm extends javax.swing.JFrame {
             jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMenuLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addComponent(jButton1)
+                .addComponent(bFood)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(bStopwatch)
                 .addGap(156, 156, 156)
-                .addComponent(jButton3)
+                .addComponent(bOgre)
                 .addGap(31, 31, 31))
         );
         jPanelMenuLayout.setVerticalGroup(
             jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMenuLayout.createSequentialGroup()
                 .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(bFood)
+                    .addComponent(bStopwatch)
+                    .addComponent(bOgre))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -383,7 +613,7 @@ public class principalForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jMainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jMainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -392,22 +622,22 @@ public class principalForm extends javax.swing.JFrame {
                 .addGap(7, 7, 7)
                 .addComponent(jPanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jMainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addComponent(jMainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void bFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFoodActionPerformed
         CardLayout card = (CardLayout)jMainPanel.getLayout();
         card.show(jMainPanel, "FoodPanel");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_bFoodActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void bStopwatchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStopwatchActionPerformed
         CardLayout card = (CardLayout)jMainPanel.getLayout();
         card.show(jMainPanel, "StopWatch");
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_bStopwatchActionPerformed
 
     private void bStopAll1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStopAll1ActionPerformed
         //Time is the string to hold what will be replaced in the textbox
@@ -428,10 +658,13 @@ public class principalForm extends javax.swing.JFrame {
         int h = t / 60;
         int m = t % 60;
         int s = 0;
-        runTimer tSFood = new runTimer(h,m,s);
-        runTimer cdClock = new runTimer(0,30,0);
+        //If this flag is set to 1 it wont start the timer.
+        flagStopAll = 0;
+        initClock tSFood = new initClock(h,m,s);
         //tSFood.stTimer.scheduleAtFixedRate(tSFood.task, 1000, 1000);
         tfThirdFoodClock.setText(tSFood.h + ":" + tSFood.m + ":" + tSFood.s);
+        cdTimer cdClock = new cdTimer();
+        cdClock.cdTimer.scheduleAtFixedRate(cdClock.task, 1000, 1000);
         Timer updateText = new Timer();
         updateText.schedule(new TimerTask() {
             @Override public void run() {
@@ -444,13 +677,7 @@ public class principalForm extends javax.swing.JFrame {
                     tSFood.h--;
                 }
                 
-                if(cdClock.s == 0 && cdClock.m >=1){
-                    cdClock.m--;
-                    cdClock.s = 60;
-                }
-                cdClock.s--;
                 tSFood.s--;
-                tfCdClock.setText("0" + cdClock.h + ":" + cdClock.m + ":" + cdClock.s);
                 
                 tfThirdFoodClock.setText(tSFood.h + ":" + tSFood.m + ":" + tSFood.s);
                 if(tSFood.h == 0 && tSFood.m == 0 && tSFood.s == 0 || flagStopAll == 1){
@@ -459,7 +686,11 @@ public class principalForm extends javax.swing.JFrame {
                     tfFirstFoodClock.setText(str);
                     tfSecondFoodClock.setText(str);
                     tfThirdFoodClock.setText(str);
+                    cdClock.task.cancel();
                     tfCdClock.setText(str);
+                }
+                if(cdClock.clock.m == 0 && cdClock.clock.s == 0){
+                    cdClock.task.cancel();
                 }
             }
         }, 1000, 1000);
@@ -527,11 +758,13 @@ public class principalForm extends javax.swing.JFrame {
         int h = t / 60;
         int m = t % 60;
         int s = 0;
-        runTimer tSFood = new runTimer(h,m,s);
-        //Cd to reuse a food is just 30 min.
-        runTimer cdClock = new runTimer(0,30,0);
+        //If this falg is set to 1 it wont start the timer
+        flagStopAll = 0;
+        initClock tSFood = new initClock(h,m,s);
         //tSFood.stTimer.scheduleAtFixedRate(tSFood.task, 1000, 1000);
         tfSecondFoodClock.setText(tSFood.h + ":" + tSFood.m + ":" + tSFood.s);
+        cdTimer cdClock = new cdTimer();
+        cdClock.cdTimer.scheduleAtFixedRate(cdClock.task, 1000, 1000);
         Timer updateText = new Timer();
         updateText.schedule(new TimerTask() {
             @Override public void run() {
@@ -542,14 +775,8 @@ public class principalForm extends javax.swing.JFrame {
                     tSFood.m=60;
                     tSFood.h--;
                 }
-                
-                if(cdClock.s == 0 && cdClock.m >=1){
-                    cdClock.m--;
-                    cdClock.s = 60;
-                }
-                cdClock.s--;
                 tSFood.s--;
-                tfCdClock.setText("0" + cdClock.h + ":" + cdClock.m + ":" + cdClock.s);
+                tfCdClock.setText("00:" + cdClock.clock.m + ":" + cdClock.clock.s);
                 tfSecondFoodClock.setText(tSFood.h + ":" + tSFood.m + ":" + tSFood.s);
                 if(tSFood.h == 0 && tSFood.m == 0 && tSFood.s == 0 || flagStopAll == 1){
                     updateText.cancel();
@@ -557,7 +784,11 @@ public class principalForm extends javax.swing.JFrame {
                     tfFirstFoodClock.setText(str);
                     tfSecondFoodClock.setText(str);
                     tfThirdFoodClock.setText(str);
+                    cdClock.task.cancel();
                     tfCdClock.setText(str);
+                }
+                if(cdClock.clock.m == 0 && cdClock.clock.s == 0){
+                    cdClock.task.cancel();
                 }
             }
         }, 1000, 1000);
@@ -581,18 +812,13 @@ public class principalForm extends javax.swing.JFrame {
         int h = t / 60;
         int m = t % 60;
         int s = 0;
+        //If this flag is set to 1, the timer will not start.
         flagStopAll = 0;
-        //Debug to see if its getting the number right
-        /*time = "0";
-        time = time + Integer.toString(h) + ":";
-        if(m == 0)
-        time = time + "0";
-        time = time + Integer.toString(m) + ":" + "00";
-        tfFirstFoodClock.setText(time);
-        */
-        runTimer tSFood = new runTimer(h,m,s);
-        runTimer cdClock = new runTimer(0,30,0);
+        //Clocks and task to update the timer.
+        initClock tSFood = new initClock(h,m,s);
         tfFirstFoodClock.setText(tSFood.h + ":" + tSFood.m + ":" + tSFood.s);
+        cdTimer cdClock = new cdTimer();
+        cdClock.cdTimer.scheduleAtFixedRate(cdClock.task, 1000, 1000);
         Timer updateText = new Timer();
         updateText.schedule(new TimerTask() {
             @Override public void run() {
@@ -604,15 +830,8 @@ public class principalForm extends javax.swing.JFrame {
                     tSFood.m=60;
                     tSFood.h--;
                 }
-                
-                if(cdClock.s == 0 && cdClock.m >=1){
-                    cdClock.m--;
-                    cdClock.s = 60;
-                }
-                cdClock.s--;
                 tSFood.s--;
-                
-                tfCdClock.setText("0" + cdClock.h + ":" + cdClock.m + ":" + cdClock.s);
+                tfCdClock.setText("00:" + cdClock.clock.m + ":" + cdClock.clock.s);
                 tfFirstFoodClock.setText(tSFood.h + ":" + tSFood.m + ":" + tSFood.s);
                 if(tSFood.h == 0 && tSFood.m == 0 && tSFood.s == 0 || flagStopAll == 1){
                     updateText.cancel();
@@ -620,11 +839,15 @@ public class principalForm extends javax.swing.JFrame {
                     tfFirstFoodClock.setText(str);
                     tfSecondFoodClock.setText(str);
                     tfThirdFoodClock.setText(str);
+                    cdClock.task.cancel();
                     tfCdClock.setText(str);
                     
                 }
+                if(cdClock.clock.m == 0 && cdClock.clock.s == 0){
+                    cdClock.task.cancel();
+                }
             }
-        }, 10, 10);
+        }, 1000, 1000);
     }//GEN-LAST:event_bAteFirstFoodActionPerformed
 
     private void tfFirstFoodClockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfFirstFoodClockActionPerformed
@@ -659,6 +882,40 @@ public class principalForm extends javax.swing.JFrame {
     private void tfCdClockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCdClockActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfCdClockActionPerformed
+
+    private void bOgreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bOgreActionPerformed
+        CardLayout card = (CardLayout)jMainPanel.getLayout();
+        card.show(jMainPanel, "OgrePanel");
+    }//GEN-LAST:event_bOgreActionPerformed
+
+    private void tfStopwatch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfStopwatch1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfStopwatch1ActionPerformed
+
+    private void tfStopwatch2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfStopwatch2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfStopwatch2ActionPerformed
+
+    private void tfStopwatch3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfStopwatch3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfStopwatch3ActionPerformed
+
+    private void tfStopwatch4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfStopwatch4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfStopwatch4ActionPerformed
+
+    private void tfStopwatch5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfStopwatch5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfStopwatch5ActionPerformed
+
+    private void tfStopwatch6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfStopwatch6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfStopwatch6ActionPerformed
+
+    private void bStart1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStart1ActionPerformed
+        Stopwatch clock = new Stopwatch(tfStopwatch1);
+        clock.runTime.scheduleAtFixedRate(clock.task, 1000, 1000);
+    }//GEN-LAST:event_bStart1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -698,14 +955,32 @@ public class principalForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button bAteFirstFood;
     private java.awt.Button bAteSecondFood;
+    private javax.swing.JButton bFood;
+    private javax.swing.JButton bOgre;
+    private javax.swing.JButton bRestart1;
+    private javax.swing.JButton bRestart2;
+    private javax.swing.JButton bRestart3;
+    private javax.swing.JButton bRestart4;
+    private javax.swing.JButton bRestart5;
+    private javax.swing.JButton bRestart6;
+    private javax.swing.JButton bStart1;
+    private javax.swing.JButton bStart2;
+    private javax.swing.JButton bStart3;
+    private javax.swing.JButton bStart4;
+    private javax.swing.JButton bStart5;
+    private javax.swing.JButton bStart6;
+    private javax.swing.JButton bStop1;
+    private javax.swing.JButton bStop2;
+    private javax.swing.JButton bStop3;
+    private javax.swing.JButton bStop4;
+    private javax.swing.JButton bStop5;
+    private javax.swing.JButton bStop6;
     private java.awt.Button bStopAll;
     private java.awt.Button bStopAll1;
+    private javax.swing.JButton bStopwatch;
     private javax.swing.JComboBox<String> cbFirstFood;
     private javax.swing.JComboBox<String> cbSecondFood;
     private javax.swing.JComboBox<String> cbThirdFood;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jFirstFoodIcon;
     private javax.swing.JPanel jFoodPanel;
     private javax.swing.JPanel jMainPanel;
@@ -725,6 +1000,12 @@ public class principalForm extends javax.swing.JFrame {
     private javax.swing.JTextField tfCdClock;
     private javax.swing.JTextField tfFirstFoodClock;
     private javax.swing.JTextField tfSecondFoodClock;
+    private javax.swing.JTextField tfStopwatch1;
+    private javax.swing.JTextField tfStopwatch2;
+    private javax.swing.JTextField tfStopwatch3;
+    private javax.swing.JTextField tfStopwatch4;
+    private javax.swing.JTextField tfStopwatch5;
+    private javax.swing.JTextField tfStopwatch6;
     private javax.swing.JTextField tfThirdFoodClock;
     // End of variables declaration//GEN-END:variables
 }

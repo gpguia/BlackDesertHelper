@@ -8,12 +8,12 @@
  *
  * @author guilhermeguia
  */
-class runTimer {
+public class initClock {
     int h;
     int m;
     int s;
     
-    public runTimer(int h1, int m1, int s1){
+    public initClock(int h1, int m1, int s1){
         h = h1;
         m = m1;
         s = s1;
