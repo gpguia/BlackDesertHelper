@@ -13,6 +13,7 @@ import javax.swing.JTextField;/*
  * @author guilhermeguia
  */
 public class setTimer {
+    String songName;
     JTextField upField;
     Button bTurnEnabled;
     int h,m,s;
@@ -42,6 +43,9 @@ public class setTimer {
                 if(h == 0 && m == 0 && s == 0){
                     cdTimer.cancel();
                     upField.setText("00:00:00");
+                    if(songName != "None"){
+                        new playSound(songName);
+                    }
                     bTurnEnabled.setEnabled(true);
                 }
                 if(h == 0 && m == 30 && s == 0){
@@ -50,12 +54,14 @@ public class setTimer {
         }
     };
     
-    public setTimer(JTextField field, Button b, int h1, int m1, int s1, boolean isRunn1){
+    public setTimer(JTextField field, Button b, int h1, int m1, int s1, boolean isRunn1, String sName){
         upField = field;
         h = h1;
         m = m1;
         s = s1;
         isRunn = isRunn1;
         bTurnEnabled = b;
+        sName = sName.replaceAll(" ", "");
+        songName = sName;
     }
 }

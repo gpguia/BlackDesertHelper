@@ -62,7 +62,6 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lRemainder" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jFirstFoodIcon" min="-2" pref="42" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -92,6 +91,11 @@
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="lSelectSongFood" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cbSelectSongFood" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <Component id="lSelect2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="label2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="label3" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -101,11 +105,13 @@
                                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                                       <Component id="bStopAll" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="lSelect1" alignment="0" min="-2" pref="408" max="-2" attributes="0"/>
+                                  <Component id="lSelect" alignment="0" min="-2" pref="225" max="-2" attributes="0"/>
+                                  <Component id="lHowTo2" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="52" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="lSelect1" alignment="0" min="-2" pref="408" max="-2" attributes="0"/>
-                          <Component id="lSelect" alignment="0" min="-2" pref="225" max="-2" attributes="0"/>
+                          <Component id="lRemainder" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -114,9 +120,16 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="lRemainder" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                      <Component id="lHowTo2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cbSelectSongFood" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lSelectSongFood" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="lSelect" min="-2" pref="18" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lSelect1" min="-2" pref="18" max="-2" attributes="0"/>
@@ -139,7 +152,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jSecondFoodIcon" min="-2" pref="42" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="tfSecondFoodClock" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="cbSecondFood" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -152,7 +165,7 @@
                           <Component id="jThirdFoodIcon" alignment="1" min="-2" pref="42" max="-2" attributes="0"/>
                           <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                               <Component id="bAteThirdFood" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="tfThirdFoodClock" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="cbThirdFood" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -175,7 +188,7 @@
           <SubComponents>
             <Component class="java.awt.Label" name="lSelect">
               <Properties>
-                <Property name="text" type="java.lang.String" value="1 - Select your food from the list."/>
+                <Property name="text" type="java.lang.String" value="2 - Select your food from the list."/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lRemainder">
@@ -438,12 +451,12 @@
             </Component>
             <Component class="java.awt.Label" name="lSelect1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="2 - Click on the button to when you ate the food in the game."/>
+                <Property name="text" type="java.lang.String" value="3 - Click on the button to when you ate the food in the game."/>
               </Properties>
             </Component>
             <Component class="java.awt.Label" name="lSelect2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="3 - The timer will start and will remaind you witch food is ending and when you can eat again"/>
+                <Property name="text" type="java.lang.String" value="4 - The timer will start and will remaind you witch food is ending and when you can eat again"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jThirdFoodIcon">
@@ -573,12 +586,12 @@
             </Component>
             <Component class="java.awt.Label" name="label2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="4 - If you want to stop all the food, just click &quot;Stop All&quot;."/>
+                <Property name="text" type="java.lang.String" value="5 - If you want to stop all the food, just click &quot;Stop All&quot;."/>
               </Properties>
             </Component>
             <Component class="java.awt.Label" name="label3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="5 - The timer next to &quot;Stop All&quot; Is the Cooldown to use another food."/>
+                <Property name="text" type="java.lang.String" value="6 - The timer next to &quot;Stop All&quot; Is the Cooldown to use another food."/>
               </Properties>
             </Component>
             <Component class="java.awt.Button" name="bStopAll">
@@ -604,6 +617,31 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfCdClockActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JComboBox" name="cbSelectSongFood">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="Gandalf Sax Guy"/>
+                    <StringItem index="1" value="Nyan Cat"/>
+                    <StringItem index="2" value="Trololo"/>
+                    <StringItem index="3" value="Beep"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lSelectSongFood">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Select song:"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Label" name="lHowTo2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="1 - Select the song you want to play when the timer get 10 min&#xa;"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jStopWatchPanel">
@@ -616,18 +654,24 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <Component id="lSelectSongStopwatch" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="cbSelectSongStopwatch" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <Component id="lHowTo1" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="tfStopwatch1" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
-                                  <Component id="tfStopwatch2" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
-                                  <Component id="tfStopwatch3" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
-                                  <Component id="tfStopwatch4" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
-                                  <Component id="tfStopwatch5" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
-                                  <Component id="tfStopwatch6" min="-2" pref="146" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="tfStopwatch1" alignment="0" pref="146" max="32767" attributes="0"/>
+                                  <Component id="tfStopwatch2" alignment="0" pref="146" max="32767" attributes="0"/>
+                                  <Component id="tfStopwatch3" alignment="0" pref="146" max="32767" attributes="0"/>
+                                  <Component id="tfStopwatch4" alignment="0" pref="146" max="32767" attributes="0"/>
+                                  <Component id="tfStopwatch5" alignment="0" pref="146" max="32767" attributes="0"/>
+                                  <Component id="tfStopwatch6" alignment="0" pref="146" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -676,7 +720,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="55" max="32767" attributes="0"/>
+                      <EmptySpace pref="65" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -685,7 +729,12 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lHowTo1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cbSelectSongStopwatch" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lSelectSongStopwatch" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="tfStopwatch1" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
                           <Component id="bStart1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -723,13 +772,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="tfStopwatch6" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
-                          <Group type="103" alignment="3" groupAlignment="3" attributes="0">
-                              <Component id="bStart6" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="bStop6" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="bRestart6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="bStart6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bStop6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bRestart6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="37" max="32767" attributes="0"/>
+                      <EmptySpace pref="25" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -737,7 +784,7 @@
           <SubComponents>
             <Component class="java.awt.Label" name="lHowTo1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="1 - Select when the program should remind you that the timer is over."/>
+                <Property name="text" type="java.lang.String" value="1 - Select the song you want to play when the timer get 10 min&#xa;"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfStopwatch1">
@@ -967,6 +1014,27 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bRestart6ActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbSelectSongStopwatch">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="5">
+                    <StringItem index="0" value="Gandalf Sax Guy"/>
+                    <StringItem index="1" value="Nyan Cat"/>
+                    <StringItem index="2" value="Trololo"/>
+                    <StringItem index="3" value="Beep"/>
+                    <StringItem index="4" value=" "/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lSelectSongStopwatch">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Select song:"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

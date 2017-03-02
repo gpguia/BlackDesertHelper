@@ -14,6 +14,7 @@ import javax.swing.JTextField;
  * @author guilhermeguia
  */
 public class Stopwatch {
+    String songName;
     JTextField upField;
     int flag;
     initClock clock = new initClock(0,0,0);
@@ -29,10 +30,17 @@ public class Stopwatch {
             }
             clock.s++;
             upField.setText(clock.h + ":" + clock.m + ":" + clock.s);
+        
+            if(clock.m == 10){
+                new playSound(songName);
+                runTime.cancel();
+            }
         }
     };
      
-    public Stopwatch(JTextField field){
+    public Stopwatch(JTextField field,String sName){
         upField = field;
+        sName = sName.replaceAll(" ", "");
+        songName = sName;
     }
 }
