@@ -23,14 +23,18 @@ public class principalForm extends javax.swing.JFrame {
     /**
      * Creates new form principalForm
      */
-    public static int flagStopAll = 0;
-    public static int flagCdTimerRunning = 0;
+    public static boolean cdIsRunning;
     public static Stopwatch clock1;
     public static Stopwatch clock2;
     public static Stopwatch clock3;
     public static Stopwatch clock4;
     public static Stopwatch clock5;
     public static Stopwatch clock6;
+    public static setTimer FirstFoodTimer;
+    public static setTimer SecondFoodTimer;
+    public static setTimer ThirdFoodTimer;
+    public static setTimer cdTimer;
+    
     public principalForm() {
         initComponents();
         lRemainder.setVisible(false);
@@ -65,7 +69,7 @@ public class principalForm extends javax.swing.JFrame {
         jThirdFoodIcon = new javax.swing.JLabel();
         cbThirdFood = new javax.swing.JComboBox<>();
         tfThirdFoodClock = new javax.swing.JTextField();
-        bStopAll1 = new java.awt.Button();
+        bAteThirdFood = new java.awt.Button();
         label2 = new java.awt.Label();
         label3 = new java.awt.Label();
         bStopAll = new java.awt.Button();
@@ -134,7 +138,6 @@ public class principalForm extends javax.swing.JFrame {
             }
         });
 
-        bAteFirstFood.setActionCommand("n");
         bAteFirstFood.setLabel("Ate the food");
         bAteFirstFood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -196,11 +199,11 @@ public class principalForm extends javax.swing.JFrame {
             }
         });
 
-        bStopAll1.setActionCommand("n");
-        bStopAll1.setLabel("Ate the food");
-        bStopAll1.addActionListener(new java.awt.event.ActionListener() {
+        bAteThirdFood.setActionCommand("n");
+        bAteThirdFood.setLabel("Ate the food");
+        bAteThirdFood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bStopAll1ActionPerformed(evt);
+                bAteThirdFoodActionPerformed(evt);
             }
         });
 
@@ -258,12 +261,10 @@ public class principalForm extends javax.swing.JFrame {
                         .addGap(24, 24, 24)
                         .addComponent(tfThirdFoodClock, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(bStopAll1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(bAteThirdFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jFoodPanelLayout.createSequentialGroup()
                         .addGroup(jFoodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lSelect1, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lSelect2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jFoodPanelLayout.createSequentialGroup()
@@ -271,7 +272,9 @@ public class principalForm extends javax.swing.JFrame {
                                 .addComponent(tfCdClock, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(46, 46, 46)
                                 .addComponent(bStopAll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 42, Short.MAX_VALUE)))
+                        .addGap(0, 52, Short.MAX_VALUE))
+                    .addComponent(lSelect1, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jFoodPanelLayout.setVerticalGroup(
@@ -307,7 +310,7 @@ public class principalForm extends javax.swing.JFrame {
                 .addGroup(jFoodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jThirdFoodIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jFoodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(bStopAll1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bAteThirdFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jFoodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tfThirdFoodClock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbThirdFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -719,7 +722,7 @@ public class principalForm extends javax.swing.JFrame {
         card.show(jMainPanel, "StopWatch");
     }//GEN-LAST:event_bStopwatchActionPerformed
 
-    private void bStopAll1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStopAll1ActionPerformed
+    private void bAteThirdFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAteThirdFoodActionPerformed
         //Time is the string to hold what will be replaced in the textbox
         String time;
         //This label will be activate when the food get 30 min or less of duration
@@ -738,47 +741,28 @@ public class principalForm extends javax.swing.JFrame {
         int h = t / 60;
         int m = t % 60;
         int s = 0;
-        //If this flag is set to 1 it wont start the timer.
-        flagStopAll = 0;
-        initClock tSFood = new initClock(h,m,s);
-        //tSFood.stTimer.scheduleAtFixedRate(tSFood.task, 1000, 1000);
-        tfThirdFoodClock.setText(tSFood.h + ":" + tSFood.m + ":" + tSFood.s);
-        cdTimer cdClock = new cdTimer();
-        cdClock.cdTimer.scheduleAtFixedRate(cdClock.task, 1000, 1000);
-        Timer updateText = new Timer();
-        updateText.schedule(new TimerTask() {
-            @Override public void run() {
-                
-                if(tSFood.s == 0 && tSFood.m >= 1){
-                    tSFood.m--;
-                    tSFood.s=60;
-                }else if(tSFood.m == 0 && tSFood.h >= 1){
-                    tSFood.m=60;
-                    tSFood.h--;
-                }else if(tSFood.m == 60){
-                    tSFood.m--;
-                    tSFood.s=60;
-                }
-                
-                tSFood.s--;
-                
-                tfCdClock.setText("00:" + cdClock.clock.m + ":" + cdClock.clock.s);
-                tfThirdFoodClock.setText(tSFood.h + ":" + tSFood.m + ":" + tSFood.s);
-                if(tSFood.h == 0 && tSFood.m == 0 && tSFood.s == 0 || flagStopAll == 1){
-                    updateText.cancel();
-                    String str = "00:00:00";
-                    tfFirstFoodClock.setText(str);
-                    tfSecondFoodClock.setText(str);
-                    tfThirdFoodClock.setText(str);
-                    cdClock.task.cancel();
-                    tfCdClock.setText(str);
-                }
-                if(cdClock.clock.m == 0 && cdClock.clock.s == 0){
-                    cdClock.task.cancel();
-                }
-            }
-        }, 1000, 1000);
-    }//GEN-LAST:event_bStopAll1ActionPerformed
+        if(ThirdFoodTimer != null){
+            ThirdFoodTimer.cdTimer.cancel();
+            ThirdFoodTimer.isRunn = false;
+        }
+        ThirdFoodTimer = new setTimer(tfThirdFoodClock,bAteThirdFood,h,m,s,false);
+        if(ThirdFoodTimer.isRunn == false){
+            ThirdFoodTimer.isRunn = true;
+            ThirdFoodTimer.cdTimer.scheduleAtFixedRate(ThirdFoodTimer.task, 10, 10);
+            
+        }
+        if(cdTimer != null){
+            cdTimer.cdTimer.cancel();
+            cdTimer.isRunn = false;
+        }
+        cdTimer = new setTimer(tfCdClock,bStopAll,0,30,0,false);
+        if(cdTimer.isRunn == false){
+            System.out.println("Came here");
+            cdTimer.isRunn = true;
+            System.out.println(cdTimer.isRunn);
+            cdTimer.cdTimer.scheduleAtFixedRate(cdTimer.task, 10, 10);
+        }
+    }//GEN-LAST:event_bAteThirdFoodActionPerformed
 
     private void tfThirdFoodClockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfThirdFoodClockActionPerformed
         // TODO add your handling code here:
@@ -845,43 +829,28 @@ public class principalForm extends javax.swing.JFrame {
         int h = t / 60;
         int m = t % 60;
         int s = 0;
-        //If this falg is set to 1 it wont start the timer
-        flagStopAll = 0;
-        initClock tSFood = new initClock(h,m,s);
-        //tSFood.stTimer.scheduleAtFixedRate(tSFood.task, 1000, 1000);
-        tfSecondFoodClock.setText(tSFood.h + ":" + tSFood.m + ":" + tSFood.s);
-        cdTimer cdClock = new cdTimer();
-        cdClock.cdTimer.scheduleAtFixedRate(cdClock.task, 1000, 1000);
-        Timer updateText = new Timer();
-        updateText.schedule(new TimerTask() {
-            @Override public void run() {
-                if(tSFood.s == 0 && tSFood.m >= 1){
-                    tSFood.m--;
-                    tSFood.s=60;
-                }else if(tSFood.m == 0 && tSFood.h >= 1){
-                    tSFood.m=60;
-                    tSFood.h--;
-                }else if(tSFood.m == 60){
-                    tSFood.m--;
-                    tSFood.s=60;
-                }
-                tSFood.s--;
-                tfCdClock.setText("00:" + cdClock.clock.m + ":" + cdClock.clock.s);
-                tfSecondFoodClock.setText(tSFood.h + ":" + tSFood.m + ":" + tSFood.s);
-                if(tSFood.h == 0 && tSFood.m == 0 && tSFood.s == 0 || flagStopAll == 1){
-                    updateText.cancel();
-                    String str = "00:00:00";
-                    tfFirstFoodClock.setText(str);
-                    tfSecondFoodClock.setText(str);
-                    tfThirdFoodClock.setText(str);
-                    cdClock.task.cancel();
-                    tfCdClock.setText(str);
-                }
-                if(cdClock.clock.m == 0 && cdClock.clock.s == 0){
-                    cdClock.task.cancel();
-                }
-            }
-        }, 1000, 1000);
+        //If button is clicked again, this will stop last timer.
+        if(SecondFoodTimer != null){
+            SecondFoodTimer.cdTimer.cancel();
+            SecondFoodTimer.isRunn = false;
+        }
+        SecondFoodTimer = new setTimer(tfSecondFoodClock,bAteSecondFood,h,m,s,false);
+        if(SecondFoodTimer.isRunn == false){
+            SecondFoodTimer.isRunn = true;
+            SecondFoodTimer.cdTimer.scheduleAtFixedRate(SecondFoodTimer.task, 10, 10);
+            
+        }
+        if(cdTimer != null){
+            cdTimer.cdTimer.cancel();
+            cdTimer.isRunn = false;
+        }
+        cdTimer = new setTimer(tfCdClock,bStopAll,0,30,0,false);
+        if(cdTimer.isRunn == false){
+            System.out.println("Came here");
+            cdTimer.isRunn = true;
+            System.out.println(cdTimer.isRunn);
+            cdTimer.cdTimer.scheduleAtFixedRate(cdTimer.task, 10, 10);
+        }
     }//GEN-LAST:event_bAteSecondFoodActionPerformed
 
     private void bAteFirstFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAteFirstFoodActionPerformed
@@ -905,45 +874,28 @@ public class principalForm extends javax.swing.JFrame {
         int h = t / 60;
         int m = t % 60;
         int s = 0;
-        //If this flag is set to 1, the timer will not start.
-        flagStopAll = 0;
-        //Clocks and task to update the timer.
-        initClock tSFood = new initClock(h,m,s);
-        tfFirstFoodClock.setText(tSFood.h + ":" + tSFood.m + ":" + tSFood.s);
-        cdTimer cdClock = new cdTimer();
-        cdClock.cdTimer.scheduleAtFixedRate(cdClock.task, 1000, 1000);
-        Timer updateText = new Timer();
-        updateText.schedule(new TimerTask() {
-            @Override public void run() {
-                //Food timer
-                if(tSFood.s == 0 && tSFood.m >= 1){
-                    tSFood.m--;
-                    tSFood.s=60;
-                }else if(tSFood.m == 0 && tSFood.h >= 1){
-                    tSFood.m=60;
-                    tSFood.h--;
-                }else if(tSFood.m == 60){
-                    tSFood.m--;
-                    tSFood.s=60;
-                }
-                tSFood.s--;
-                tfCdClock.setText("00:" + cdClock.clock.m + ":" + cdClock.clock.s);
-                tfFirstFoodClock.setText(tSFood.h + ":" + tSFood.m + ":" + tSFood.s);
-                if(tSFood.h == 0 && tSFood.m == 0 && tSFood.s == 0 || flagStopAll == 1){
-                    updateText.cancel();
-                    String str = "00:00:00";
-                    tfFirstFoodClock.setText(str);
-                    tfSecondFoodClock.setText(str);
-                    tfThirdFoodClock.setText(str);
-                    cdClock.task.cancel();
-                    tfCdClock.setText(str);
-                    
-                }
-                if(cdClock.clock.m == 0 && cdClock.clock.s == 0){
-                    cdClock.task.cancel();
-                }
-            }
-        }, 1000, 1000);
+        if(FirstFoodTimer != null){
+            FirstFoodTimer.cdTimer.cancel();
+            FirstFoodTimer.isRunn = false;
+        }
+        FirstFoodTimer = new setTimer(tfFirstFoodClock,bAteFirstFood,h,m,s,false);
+        if(FirstFoodTimer.isRunn == false){
+            FirstFoodTimer.isRunn = true;
+            FirstFoodTimer.cdTimer.scheduleAtFixedRate(FirstFoodTimer.task, 10, 10);
+        }
+        if(cdTimer != null){
+            cdTimer.cdTimer.cancel();
+            cdTimer.isRunn = false;
+        }
+        cdTimer = new setTimer(tfCdClock,bStopAll,0,30,0,false);
+        if(cdTimer.isRunn == false){
+            System.out.println("Came here");
+            cdTimer.isRunn = true;
+            System.out.println(cdTimer.isRunn);
+            cdTimer.cdTimer.scheduleAtFixedRate(cdTimer.task, 10, 10);
+        }
+        
+        
     }//GEN-LAST:event_bAteFirstFoodActionPerformed
 
     private void tfFirstFoodClockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfFirstFoodClockActionPerformed
@@ -971,8 +923,25 @@ public class principalForm extends javax.swing.JFrame {
     }//GEN-LAST:event_cbFirstFoodActionPerformed
 
     private void bStopAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStopAllActionPerformed
-        //Flag to stop all timers;
-        flagStopAll = 1;
+        
+        //bAteSecondFood.enable(true);
+        //bAteThirdFood.enable(true);
+        if(FirstFoodTimer != null){
+            FirstFoodTimer.cdTimer.cancel();
+            tfFirstFoodClock.setText("00:00:00");
+        }
+        if(cdTimer != null){
+            cdTimer.cdTimer.cancel();
+            tfCdClock.setText("00:00:00");
+        }
+        if(SecondFoodTimer != null){
+            SecondFoodTimer.cdTimer.cancel();
+            tfSecondFoodClock.setText("00:00:00");
+        }
+        if(ThirdFoodTimer != null){
+            ThirdFoodTimer.cdTimer.cancel();
+            tfThirdFoodClock.setText("00:00:00");
+        }
     }//GEN-LAST:event_bStopAllActionPerformed
 
     private void tfCdClockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCdClockActionPerformed
@@ -1009,6 +978,9 @@ public class principalForm extends javax.swing.JFrame {
     }//GEN-LAST:event_tfStopwatch6ActionPerformed
 
     private void bStart1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStart1ActionPerformed
+        if(clock1 != null){
+            clock1.runTime.cancel();
+        }
         clock1 = new Stopwatch(tfStopwatch1);
         clock1.runTime.scheduleAtFixedRate(clock1.task, 1000, 1000);
     }//GEN-LAST:event_bStart1ActionPerformed
@@ -1023,26 +995,41 @@ public class principalForm extends javax.swing.JFrame {
     }//GEN-LAST:event_bRestart1ActionPerformed
 
     private void bStart2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStart2ActionPerformed
+        if(clock2 != null){
+            clock2.runTime.cancel();
+        }
         clock2 = new Stopwatch(tfStopwatch2);
         clock2.runTime.scheduleAtFixedRate(clock2.task, 1000, 1000);
     }//GEN-LAST:event_bStart2ActionPerformed
 
     private void bStart3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStart3ActionPerformed
+        if(clock3 != null){
+            clock3.runTime.cancel();
+        }
         clock3 = new Stopwatch(tfStopwatch3);
         clock3.runTime.scheduleAtFixedRate(clock3.task, 1000, 1000);
     }//GEN-LAST:event_bStart3ActionPerformed
 
     private void bStart4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStart4ActionPerformed
+        if(clock4 != null){
+            clock4.runTime.cancel();
+        }
         clock4 = new Stopwatch(tfStopwatch4);
         clock4.runTime.scheduleAtFixedRate(clock4.task, 1000, 1000);
     }//GEN-LAST:event_bStart4ActionPerformed
 
     private void bStart5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStart5ActionPerformed
+        if(clock5 != null){
+            clock5.runTime.cancel();
+        }
         clock5 = new Stopwatch(tfStopwatch5);
         clock5.runTime.scheduleAtFixedRate(clock5.task, 1000, 1000);
     }//GEN-LAST:event_bStart5ActionPerformed
 
     private void bStart6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStart6ActionPerformed
+        if(clock6 != null){
+            clock6.runTime.cancel();
+        }
         clock6 = new Stopwatch(tfStopwatch6);
         clock6.runTime.scheduleAtFixedRate(clock6.task, 1000, 1000);
     }//GEN-LAST:event_bStart6ActionPerformed
@@ -1130,6 +1117,7 @@ public class principalForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button bAteFirstFood;
     private java.awt.Button bAteSecondFood;
+    private java.awt.Button bAteThirdFood;
     private javax.swing.JButton bFood;
     private javax.swing.JButton bOgre;
     private javax.swing.JButton bRestart1;
@@ -1151,7 +1139,6 @@ public class principalForm extends javax.swing.JFrame {
     private javax.swing.JButton bStop5;
     private javax.swing.JButton bStop6;
     private java.awt.Button bStopAll;
-    private java.awt.Button bStopAll1;
     private javax.swing.JButton bStopwatch;
     private javax.swing.JComboBox<String> cbFirstFood;
     private javax.swing.JComboBox<String> cbSecondFood;
