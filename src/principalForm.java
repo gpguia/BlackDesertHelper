@@ -29,7 +29,7 @@ public class principalForm extends javax.swing.JFrame {
     public static setTimer ThirdFoodTimer;
     public static setTimer cdTimer;
     //This variable is set to debug mode, so if u set it to 10 the timer will run faster to dubug
-    public static int timerToRun = 10;
+    public static int timerToRun = 1000;
     
     public principalForm() {
         initComponents();
