@@ -11,12 +11,6 @@
 
 import java.awt.CardLayout;
 import javax.swing.ImageIcon;
-//import java.util.Calendar;
-//import java.text.SimpleDateFormat;
-import java.util.Timer;
-import java.util.TimerTask;
-//import static javafx.scene.input.KeyCode.R;
-//import javax.swing.JTextField;
 
 public class principalForm extends javax.swing.JFrame {
 
@@ -35,7 +29,7 @@ public class principalForm extends javax.swing.JFrame {
     public static setTimer ThirdFoodTimer;
     public static setTimer cdTimer;
     //This variable is set to debug mode, so if u set it to 10 the timer will run faster to dubug
-    public static int timerToRun = 1000;
+    public static int timerToRun = 10;
     
     public principalForm() {
         initComponents();
@@ -241,7 +235,7 @@ public class principalForm extends javax.swing.JFrame {
 
         lSelectSongFood.setText("Select song:");
 
-        lHowTo2.setText("1 - Select the song you want to play when the timer get 10 min\n");
+        lHowTo2.setText("1 - Select the song you want to play when you can eat another food.\n");
 
         javax.swing.GroupLayout jFoodPanelLayout = new javax.swing.GroupLayout(jFoodPanel);
         jFoodPanel.setLayout(jFoodPanelLayout);
@@ -711,7 +705,7 @@ public class principalForm extends javax.swing.JFrame {
                 .addComponent(bFood)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bStopwatch)
-                .addGap(156, 156, 156)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bOgre)
                 .addGap(31, 31, 31))
         );
@@ -742,7 +736,7 @@ public class principalForm extends javax.swing.JFrame {
                 .addComponent(jPanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jMainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         pack();

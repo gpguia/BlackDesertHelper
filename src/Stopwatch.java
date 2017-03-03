@@ -21,6 +21,7 @@ public class Stopwatch {
     Timer runTime = new Timer();
     TimerTask task = new TimerTask(){
         public void run(){
+            clock.s++;
             if(clock.s == 60){
                 clock.m++;
                 clock.s = 0;
@@ -28,7 +29,7 @@ public class Stopwatch {
                 clock.h++;
                 clock.m=0;
             }
-            clock.s++;
+            
             upField.setText(clock.h + ":" + clock.m + ":" + clock.s);
         
             if(clock.m == 10){

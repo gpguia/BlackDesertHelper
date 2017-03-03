@@ -39,7 +39,7 @@
               <Component id="jPanelMenu" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jMainPanel" max="32767" attributes="0"/>
-              <EmptySpace pref="99" max="32767" attributes="0"/>
+              <EmptySpace pref="71" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -639,7 +639,7 @@
             </Component>
             <Component class="java.awt.Label" name="lHowTo2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="1 - Select the song you want to play when the timer get 10 min&#xa;"/>
+                <Property name="text" type="java.lang.String" value="1 - Select the song you want to play when you can eat another food.&#xa;"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -1085,7 +1085,7 @@
                   <Component id="bFood" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="bStopwatch" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="bOgre" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               </Group>
