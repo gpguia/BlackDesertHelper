@@ -1,5 +1,6 @@
-# foodHelperBDO
-It's a java based timer to help players to not forget to use their food.
+# Black Desert Food helper and Stopwatch.
+
+It's a java based timer to help players to not forget to use their food, it will play sounds to remember.
 
 Also has a StopWatch to help when you want to buy something from the market.
 
