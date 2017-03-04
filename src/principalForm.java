@@ -37,6 +37,7 @@ public class principalForm extends javax.swing.JFrame {
         
         initComponents();
         lRemainder.setVisible(false);
+        lRemainderStopwatch.setVisible(false);
         ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource("resources/img/AloeCookie.png"));
         jFirstFoodIcon.setIcon(icon);
         jSecondFoodIcon.setIcon(icon);
