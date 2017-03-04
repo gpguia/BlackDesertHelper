@@ -8,4 +8,4 @@ It's pretty easy to use, there are some labels to help you in the program =D.
 
 
 # ***Download***
-[Download link](https://cdn.rawgit.com/gpguia/BlackDesertHelper/65eea28b/releases/FoodTimerHelper_1.0.0.jar)
+[Download link](https://cdn.rawgit.com/gpguia/BlackDesertHelper/5b6018de/releases/FoodTimerHelper_1.0.0.jar)
