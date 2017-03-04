@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.JTextField;
@@ -32,9 +33,9 @@ public class Stopwatch {
             
             upField.setText(clock.h + ":" + clock.m + ":" + clock.s);
         
-            if(clock.m == 10){
+            if(clock.m == 9 && clock.s == 30){
                 new playSound(songName);
-                runTime.cancel();
+                upField.setForeground(Color.red);
             }
         }
     };

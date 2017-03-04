@@ -3,6 +3,9 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[673, 601]"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -27,7 +30,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jMainPanel" max="32767" attributes="0"/>
-                  <Component id="jPanelMenu" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jMenuPanel" alignment="0" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -36,10 +39,10 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-              <Component id="jPanelMenu" min="-2" max="-2" attributes="0"/>
+              <Component id="jMenuPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jMainPanel" max="32767" attributes="0"/>
-              <EmptySpace pref="71" max="32767" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -95,6 +98,8 @@
                                       <Component id="lSelectSongFood" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="cbSelectSongFood" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="bListenAudioFood" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="lSelect2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="label2" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -128,6 +133,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="cbSelectSongFood" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lSelectSongFood" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bListenAudioFood" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lSelect" min="-2" pref="18" max="-2" attributes="0"/>
@@ -642,6 +648,14 @@
                 <Property name="text" type="java.lang.String" value="1 - Select the song you want to play when you can eat another food.&#xa;"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JButton" name="bListenAudioFood">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Listen the audio"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bListenAudioFoodActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jStopWatchPanel">
@@ -654,85 +668,95 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lRemainderStopwatch" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                              <Component id="lSelectSongStopwatch" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="cbSelectSongStopwatch" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="lHowTo1" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="tfStopwatch1" alignment="0" pref="146" max="32767" attributes="0"/>
-                                  <Component id="tfStopwatch2" alignment="0" pref="146" max="32767" attributes="0"/>
-                                  <Component id="tfStopwatch3" alignment="0" pref="146" max="32767" attributes="0"/>
-                                  <Component id="tfStopwatch4" alignment="0" pref="146" max="32767" attributes="0"/>
-                                  <Component id="tfStopwatch5" alignment="0" pref="146" max="32767" attributes="0"/>
-                                  <Component id="tfStopwatch6" alignment="0" pref="146" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="bStart5" min="-2" pref="125" max="-2" attributes="0"/>
+                                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                      <Component id="lSelectSongStopwatch" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="bStop5" min="-2" pref="125" max="-2" attributes="0"/>
+                                      <Component id="cbSelectSongStopwatch" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="bRestart5" min="-2" pref="125" max="-2" attributes="0"/>
+                                      <Component id="bListenAudioStopwatch" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="bStart4" min="-2" pref="125" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="bStop4" min="-2" pref="125" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="bRestart4" min="-2" pref="125" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="bStart3" min="-2" pref="125" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="bStop3" min="-2" pref="125" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="bRestart3" min="-2" pref="125" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="bStart2" min="-2" pref="125" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="bStop2" min="-2" pref="125" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="bRestart2" min="-2" pref="125" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="bStart1" min="-2" pref="125" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="bStop1" min="-2" pref="125" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="bRestart1" min="-2" pref="125" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="bStart6" min="-2" pref="125" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="bStop6" min="-2" pref="125" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="bRestart6" min="-2" pref="125" max="-2" attributes="0"/>
+                                  <Component id="lHowTo1" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="tfStopwatch1" alignment="0" pref="146" max="32767" attributes="0"/>
+                                          <Component id="tfStopwatch2" alignment="0" pref="146" max="32767" attributes="0"/>
+                                          <Component id="tfStopwatch3" alignment="0" pref="146" max="32767" attributes="0"/>
+                                          <Component id="tfStopwatch4" alignment="0" pref="146" max="32767" attributes="0"/>
+                                          <Component id="tfStopwatch5" alignment="0" pref="146" max="32767" attributes="0"/>
+                                          <Component id="tfStopwatch6" alignment="0" pref="146" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="bStart5" min="-2" pref="125" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="bStop5" min="-2" pref="125" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="bRestart5" min="-2" pref="125" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="bStart4" min="-2" pref="125" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="bStop4" min="-2" pref="125" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="bRestart4" min="-2" pref="125" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="bStart3" min="-2" pref="125" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="bStop3" min="-2" pref="125" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="bRestart3" min="-2" pref="125" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="bStart2" min="-2" pref="125" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="bStop2" min="-2" pref="125" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="bRestart2" min="-2" pref="125" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="bStart1" min="-2" pref="125" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="bStop1" min="-2" pref="125" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="bRestart1" min="-2" pref="125" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="bStart6" min="-2" pref="125" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="bStop6" min="-2" pref="125" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="bRestart6" min="-2" pref="125" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
                               </Group>
+                              <EmptySpace min="0" pref="59" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="65" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+                      <Component id="lRemainderStopwatch" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lHowTo1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="cbSelectSongStopwatch" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lSelectSongStopwatch" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bListenAudioStopwatch" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -776,7 +800,7 @@
                           <Component id="bStop6" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="bRestart6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="25" max="32767" attributes="0"/>
+                      <EmptySpace pref="54" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1036,6 +1060,23 @@
                 <Property name="text" type="java.lang.String" value="Select song:"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JButton" name="bListenAudioStopwatch">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Listen the audio"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bListenAudioStopwatchActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lRemainderStopwatch">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="You should eat: "/>
+                <Property name="name" type="java.lang.String" value="lRemainder" noResource="true"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jOgrePanel">
@@ -1051,7 +1092,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="label1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="518" max="32767" attributes="0"/>
+                      <EmptySpace pref="528" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1060,7 +1101,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="label1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="379" max="32767" attributes="0"/>
+                      <EmptySpace pref="425" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1075,18 +1116,50 @@
         </Container>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="jPanelMenu">
+    <Container class="javax.swing.JPanel" name="jMenuPanel">
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                  <Component id="bFood" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="bStopwatch" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="bOgre" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="bFood" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="169" max="32767" attributes="0"/>
+                          <Component id="bStopwatch" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="169" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="bLoadPf1" min="-2" max="-2" attributes="0"/>
+                              <Component id="bSavePf1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="bLoadPf2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="bSavePf2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="bOgre" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="bLoadPf3" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="bSavePf3" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -1099,7 +1172,36 @@
                       <Component id="bStopwatch" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="bOgre" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="bSavePf1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="bLoadPf1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="bSavePf2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="bLoadPf2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="bSavePf3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="bLoadPf3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -1127,6 +1229,69 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bOgreActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="bSavePf1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Save"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bSavePf1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Profile 1:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="bLoadPf1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Load"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bLoadPf1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Profile 2:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="bSavePf2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Save"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bSavePf2ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="bLoadPf2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Load"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bLoadPf2ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Profile 3:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="bSavePf3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Save"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bSavePf3ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="bLoadPf3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Load"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bLoadPf3ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
