@@ -371,7 +371,7 @@ public class principalForm extends javax.swing.JFrame {
 
         jMainPanel.add(jFoodPanel, "FoodPanel");
 
-        lHowTo1.setText("1 - Select the song you want to play when the timer get 10 min\n");
+        lHowTo1.setText("1 - Select the song you want to play when the timer get to 9 min and 30 secs\n");
 
         tfStopwatch1.setEditable(false);
         tfStopwatch1.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N

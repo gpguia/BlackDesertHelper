@@ -808,7 +808,7 @@
           <SubComponents>
             <Component class="java.awt.Label" name="lHowTo1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="1 - Select the song you want to play when the timer get 10 min&#xa;"/>
+                <Property name="text" type="java.lang.String" value="1 - Select the song you want to play when the timer get to 9 min and 30 secs&#xa;"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfStopwatch1">
