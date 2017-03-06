@@ -17,6 +17,7 @@ import javax.swing.JComboBox;
 public class loadProfile {
     
     public loadProfile(int nP, JComboBox songFood, JComboBox songStopwatch, JComboBox fn1, JComboBox fn2, JComboBox fn3){
+        String folder = "BdoHelper";
         String osName = System.getProperty("os.name");
         String myDocumentPath;
         String fileName;
@@ -27,10 +28,10 @@ public class loadProfile {
         fileName = "profile" + nP;
         
         if(osName.startsWith("Mac")){        
-            myDocumentPath = System.getProperty("user.home") + "/Documents";
+            myDocumentPath = System.getProperty("user.home") + "/Documents" + "/BdoHelper";
             fileName = myDocumentPath + "/profile" + nP;
         }else if(osName.startsWith("Windows")){
-            myDocumentPath = System.getProperty("user.home") + "\\Documents";
+            myDocumentPath = System.getProperty("user.home") + "\\Documents" + "\\BdoHelper";
             fileName = myDocumentPath + "\\profile" + nP;
         }
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
@@ -39,7 +40,7 @@ public class loadProfile {
 
 			while ((sCurrentLine = br.readLine()) != null) {
                             arrayNames[i] = sCurrentLine;
-                            System.out.println(arrayNames[i]);
+                            //System.out.println(arrayNames[i]); Debug only
                             i++;
                             flagFindProfile = 1;
 			}
@@ -48,7 +49,7 @@ public class loadProfile {
                     if(flagFindProfile != 0)
                         new errorDialog("Loading error","Erro code: 1002, when trying to load the profile, something is missing, please save it again.");
 		}
-        System.out.println(flagFindProfile);
+        //System.out.println(flagFindProfile); Debug Only
         if(i == 5 && flagFindProfile == 1){
             songFood.setSelectedItem(arrayNames[0]);
             songStopwatch.setSelectedItem(arrayNames[1]);
