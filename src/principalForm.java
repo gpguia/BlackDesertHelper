@@ -11,9 +11,20 @@
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import static java.awt.SystemColor.text;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.text.AbstractDocument;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DocumentFilter;
 
 public class principalForm extends javax.swing.JFrame {
 
@@ -36,7 +47,7 @@ public class principalForm extends javax.swing.JFrame {
     //This variable is set to debug mode, so if u set it to 10 the timer will run faster to dubug
     public static int timerToRun = 1000;
     
-    public principalForm() {
+    public principalForm() throws IOException, URISyntaxException {
         
         initComponents();
         lRemainder.setVisible(false);
@@ -81,12 +92,12 @@ public class principalForm extends javax.swing.JFrame {
         lSelectSongFood = new javax.swing.JLabel();
         lHowTo2 = new java.awt.Label();
         bListenAudioFood = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        tfHotKey1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        tfHotKey2 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        tfHotKey3 = new javax.swing.JTextField();
         jStopWatchPanel = new javax.swing.JPanel();
         lHowTo1 = new java.awt.Label();
         tfStopwatch1 = new javax.swing.JTextField();
@@ -134,7 +145,6 @@ public class principalForm extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         mExit = new javax.swing.JMenuItem();
-        mEdit = new javax.swing.JMenu();
         mHelp = new javax.swing.JMenu();
         mAbout = new javax.swing.JMenuItem();
         mCheckUpdate = new javax.swing.JMenuItem();
@@ -276,11 +286,32 @@ public class principalForm extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("HotKey:");
+        tfHotKey1.setText("1");
+        tfHotKey1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tfHotKey1FocusGained(evt);
+            }
+        });
 
-        jLabel5.setText("HotKey:");
+        jLabel4.setText("HotKey: ALT +");
 
-        jLabel6.setText("HotKey:");
+        jLabel5.setText("HotKey: ALT + ");
+
+        tfHotKey2.setText("2");
+        tfHotKey2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tfHotKey2FocusGained(evt);
+            }
+        });
+
+        jLabel6.setText("HotKey: ALT + ");
+
+        tfHotKey3.setText("3");
+        tfHotKey3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tfHotKey3FocusGained(evt);
+            }
+        });
 
         javax.swing.GroupLayout jFoodPanelLayout = new javax.swing.GroupLayout(jFoodPanel);
         jFoodPanel.setLayout(jFoodPanelLayout);
@@ -308,7 +339,7 @@ public class principalForm extends javax.swing.JFrame {
                             .addComponent(lSelect1, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lHowTo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 81, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(lRemainder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jFoodPanelLayout.createSequentialGroup()
                         .addGroup(jFoodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -319,7 +350,7 @@ public class principalForm extends javax.swing.JFrame {
                                     .addComponent(cbFirstFood, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(23, 23, 23)
                                     .addComponent(tfFirstFoodClock, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(jLabel4))
                                 .addGroup(jFoodPanelLayout.createSequentialGroup()
                                     .addComponent(jSecondFoodIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -327,7 +358,7 @@ public class principalForm extends javax.swing.JFrame {
                                     .addComponent(cbSecondFood, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(24, 24, 24)
                                     .addComponent(tfSecondFoodClock, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel5)))
                             .addGroup(jFoodPanelLayout.createSequentialGroup()
                                 .addComponent(jThirdFoodIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -335,14 +366,13 @@ public class principalForm extends javax.swing.JFrame {
                                 .addComponent(cbThirdFood, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(24, 24, 24)
                                 .addComponent(tfThirdFoodClock, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel6)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jFoodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                            .addGroup(jFoodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                                .addComponent(jTextField1)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jFoodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(tfHotKey2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                            .addComponent(tfHotKey1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfHotKey3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jFoodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(bAteFirstFood, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -377,7 +407,7 @@ public class principalForm extends javax.swing.JFrame {
                             .addGroup(jFoodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(cbFirstFood)
                                 .addComponent(tfFirstFoodClock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfHotKey1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel4))
                             .addComponent(bAteFirstFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -387,7 +417,7 @@ public class principalForm extends javax.swing.JFrame {
                         .addGroup(jFoodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tfSecondFoodClock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbSecondFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfHotKey2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
                         .addComponent(bAteSecondFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -398,7 +428,7 @@ public class principalForm extends javax.swing.JFrame {
                         .addGroup(jFoodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tfThirdFoodClock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbThirdFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfHotKey3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))))
                 .addGap(27, 27, 27)
                 .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -686,7 +716,7 @@ public class principalForm extends javax.swing.JFrame {
                                         .addComponent(bStop6, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(bRestart6, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 88, Short.MAX_VALUE)))
+                        .addGap(0, 116, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jStopWatchPanelLayout.setVerticalGroup(
@@ -750,7 +780,7 @@ public class principalForm extends javax.swing.JFrame {
             .addGroup(jOgrePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(557, Short.MAX_VALUE))
+                .addContainerGap(585, Short.MAX_VALUE))
         );
         jOgrePanelLayout.setVerticalGroup(
             jOgrePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -807,10 +837,12 @@ public class principalForm extends javax.swing.JFrame {
                 .addGap(165, 165, 165))
         );
 
+        mFile.setMnemonic('f');
         mFile.setText("File");
 
         mSaveProfile.setText("Save Profile");
 
+        mProfile1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.SHIFT_MASK));
         mProfile1.setText("Profile 1");
         mProfile1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -819,6 +851,7 @@ public class principalForm extends javax.swing.JFrame {
         });
         mSaveProfile.add(mProfile1);
 
+        mProfile2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, java.awt.event.InputEvent.SHIFT_MASK));
         mProfile2.setText("Profile 2");
         mProfile2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -827,6 +860,7 @@ public class principalForm extends javax.swing.JFrame {
         });
         mSaveProfile.add(mProfile2);
 
+        mProfile3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, java.awt.event.InputEvent.SHIFT_MASK));
         mProfile3.setText("Profile 3");
         mProfile3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -839,6 +873,7 @@ public class principalForm extends javax.swing.JFrame {
 
         mLoadProfile.setText("Load Profile");
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
         jMenuItem1.setText("Profile 1");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -847,6 +882,7 @@ public class principalForm extends javax.swing.JFrame {
         });
         mLoadProfile.add(jMenuItem1);
 
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
         jMenuItem2.setText("Profile 2");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -855,6 +891,7 @@ public class principalForm extends javax.swing.JFrame {
         });
         mLoadProfile.add(jMenuItem2);
 
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, 0));
         jMenuItem3.setText("Profile 3");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -875,9 +912,7 @@ public class principalForm extends javax.swing.JFrame {
 
         jMenuBar2.add(mFile);
 
-        mEdit.setText("Edit");
-        jMenuBar2.add(mEdit);
-
+        mHelp.setMnemonic('h');
         mHelp.setText("Help");
 
         mAbout.setText("About");
@@ -1375,12 +1410,59 @@ public class principalForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void mCheckUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mCheckUpdateActionPerformed
-        
+        try {
+            new checkUpdate(version);
+        } catch (IOException ex) {
+            new errorDialog("Update Error", "Please verify your internet connection\nIf you have an internet connection, please get in touch through github.\nhttps://github.com/gpguia/BlackDesertHelper");
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(principalForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_mCheckUpdateActionPerformed
+
+    private void tfHotKey1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfHotKey1FocusGained
+        AbstractDocument d = (AbstractDocument) tfHotKey1.getDocument();
+        d.setDocumentFilter(new DocumentFilter(){
+            int max =1;
+            @Override
+            public void replace(DocumentFilter.FilterBypass fb, int offset, int lenght, String text, AttributeSet attrs) throws BadLocationException{
+                int documentLenght = fb.getDocument().getLength();
+                if(documentLenght - lenght + text.length()<= max)
+                    super.replace(fb, offset, lenght, text.toUpperCase(), attrs);
+            }
+        });
+    }//GEN-LAST:event_tfHotKey1FocusGained
+
+    private void tfHotKey2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfHotKey2FocusGained
+                AbstractDocument d = (AbstractDocument) tfHotKey2.getDocument();
+        d.setDocumentFilter(new DocumentFilter(){
+            int max =1;
+            @Override
+            public void replace(DocumentFilter.FilterBypass fb, int offset, int lenght, String text, AttributeSet attrs) throws BadLocationException{
+                int documentLenght = fb.getDocument().getLength();
+                if(documentLenght - lenght + text.length()<= max)
+                    super.replace(fb, offset, lenght, text.toUpperCase(), attrs);
+            }
+        });
+    }//GEN-LAST:event_tfHotKey2FocusGained
+
+    private void tfHotKey3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfHotKey3FocusGained
+                AbstractDocument d = (AbstractDocument) tfHotKey3.getDocument();
+        d.setDocumentFilter(new DocumentFilter(){
+            int max =1;
+            @Override
+            public void replace(DocumentFilter.FilterBypass fb, int offset, int lenght, String text, AttributeSet attrs) throws BadLocationException{
+                int documentLenght = fb.getDocument().getLength();
+                if(documentLenght - lenght + text.length()<= max)
+                    super.replace(fb, offset, lenght, text.toUpperCase(), attrs);
+            }
+        });
+    }//GEN-LAST:event_tfHotKey3FocusGained
 
     /**
      * @param args the command line arguments
      */
+      
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1406,9 +1488,16 @@ public class principalForm extends javax.swing.JFrame {
         //</editor-fold>
         
         /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new principalForm().setVisible(true);
+                try {
+                    new principalForm().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(principalForm.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (URISyntaxException ex) {
+                    Logger.getLogger(principalForm.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -1460,9 +1549,6 @@ public class principalForm extends javax.swing.JFrame {
     private javax.swing.JPanel jOgrePanel;
     private javax.swing.JLabel jSecondFoodIcon;
     private javax.swing.JPanel jStopWatchPanel;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel jThirdFoodIcon;
     private java.awt.Label lHowTo1;
     private java.awt.Label lHowTo2;
@@ -1478,7 +1564,6 @@ public class principalForm extends javax.swing.JFrame {
     private java.awt.Label label3;
     private javax.swing.JMenuItem mAbout;
     private javax.swing.JMenuItem mCheckUpdate;
-    private javax.swing.JMenu mEdit;
     private javax.swing.JMenuItem mExit;
     private javax.swing.JMenu mFile;
     private javax.swing.JMenu mHelp;
@@ -1489,6 +1574,9 @@ public class principalForm extends javax.swing.JFrame {
     private javax.swing.JMenu mSaveProfile;
     private javax.swing.JTextField tfCdClock;
     private javax.swing.JTextField tfFirstFoodClock;
+    private javax.swing.JTextField tfHotKey1;
+    private javax.swing.JTextField tfHotKey2;
+    private javax.swing.JTextField tfHotKey3;
     private javax.swing.JTextField tfSecondFoodClock;
     private javax.swing.JTextField tfStopwatch1;
     private javax.swing.JTextField tfStopwatch2;

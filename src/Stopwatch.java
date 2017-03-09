@@ -33,7 +33,7 @@ public class Stopwatch {
             
             upField.setText(clock.h + ":" + clock.m + ":" + clock.s);
         
-            if(clock.m == 9 && clock.s == 30){
+            if(clock.h == 0 && clock.m == 9 && clock.s == 30){
                 new playSound(songName);
                 upField.setForeground(Color.red);
             }
