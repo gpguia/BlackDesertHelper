@@ -19,7 +19,7 @@ public class checkUpdate {
     
     public checkUpdate (String currentVersion) throws IOException, URISyntaxException{
         String version = "0";
-        URL oracle = new URL("https://cdn.rawgit.com/gpguia/BlackDesertHelper/ab7db599/releases/version.txt");
+        URL oracle = new URL("https://raw.githubusercontent.com/gpguia/BlackDesertHelper/master/releases/version.txt");
         try (BufferedReader in = new BufferedReader(
                 new InputStreamReader(oracle.openStream()))) {
             String inputLine;
