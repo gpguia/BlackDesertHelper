@@ -2,6 +2,7 @@
 import java.awt.Button;
 import java.util.Timer;
 import java.util.TimerTask;
+import javax.swing.JButton;
 import javax.swing.JTextField;/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,7 +16,7 @@ import javax.swing.JTextField;/*
 public class setTimer {
     String songName;
     JTextField upField;
-    Button bTurnEnabled;
+    JButton bTurnEnabled;
     int h,m,s;
     boolean isRunn = false;
     initClock clock = new initClock(h,m,s);
@@ -54,7 +55,7 @@ public class setTimer {
         }
     };
     
-    public setTimer(JTextField field, Button b, int h1, int m1, int s1, boolean isRunn1, String sName){
+    public setTimer(JTextField field, JButton b, int h1, int m1, int s1, boolean isRunn1, String sName){
         upField = field;
         h = h1;
         m = m1;
