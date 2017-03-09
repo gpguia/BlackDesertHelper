@@ -43,7 +43,7 @@ public class checkUpdate {
             options[1]);
             if(n == JOptionPane.NO_OPTION){
                 if(Desktop.isDesktopSupported()){
-                    Desktop.getDesktop().browse(new URI("https://raw.githubusercontent.com/gpguia/BlackDesertHelper/master/releases/FoodTimerHelper_1.0.0.jar"));
+                    Desktop.getDesktop().browse(new URI("https://github.com/gpguia/BlackDesertHelper/releases"));
                    }
             }
         }else{
